@@ -1,6 +1,6 @@
 <?php
 
-namespace BitrixApi;
+namespace BitrixRestApi;
 
 interface ApiInterface
 {

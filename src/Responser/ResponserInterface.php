@@ -1,6 +1,6 @@
 <?php
 
-namespace BitrixApi\Responser;
+namespace BitrixRestApi\Responser;
 
 /**
  *

@@ -1,5 +1,5 @@
 {
-    "name": "vsavritsky/bitrix-api",
+    "name": "vsavritsky/bitrix-rest-api",
     "description": "Библиотека для создания REST API в битриксе",
     "type": "library",
     "require": {
@@ -13,7 +13,7 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "BitrixApi\\": "src"
+            "BitrixRestApi\\": "src"
         }
     }
     
