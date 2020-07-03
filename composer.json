@@ -1,0 +1,20 @@
+{
+    "name": "vsavritsky/bitrix-api",
+    "description": "Библиотека для создания REST API в битриксе",
+    "type": "library",
+    "require": {
+    	"php": ">=5.6",
+        "phpdocumentor/reflection-docblock": "4.*",
+        "zircote/swagger-php": "^3.0",
+        "vanderlee/swaggergen": "^2.3",
+        "swagger-api/swagger-ui": "^3.28",
+        "symfony/dotenv": "3.*"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "BitrixApi\\": "src"
+        }
+    }
+    
+}
