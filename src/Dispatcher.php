@@ -2,7 +2,10 @@
 
 namespace BitrixRestApi;
 
-use Bitrix\Main\HttpRequest;
+use BitrixRestApi\Responser\ResponserInterface;
+use phpDocumentor\Reflection\DocBlockFactory;
+use Symfony\Component\HttpFoundation\ParameterBag;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Диспетчер API запросов
@@ -12,39 +15,39 @@ class Dispatcher
     const E_INCORRECT_REQUEST = 'Incorrect API request';
     const E_UNKNOWN_METHOD = 'Unknown API method';
     
-    const REGEXP_PATH = '#^([a-zA-Z\-]*)\/([\.a-zA-Z\-]*)\/([a-zA-Z\-]*)\/([a-zA-Z\-]*)#';
-    const REGEXP_PATH_VERSIONING = '#^([a-zA-Z\-]*)\/([\.a-zA-Z\-]*)\/([0-9a-zA-Z\-_]*)\/([a-zA-Z\-]*)\/([a-zA-Z\-]*)#';
+    const REGEXP_PATH = '#path="([a-zA-Z0-9./-]*)"#';
     
     // конфигурации всех АПИ
-    private $config = array();
+    private $config = null;
+    
     // дефолтное значение
-    private $defaultConfig = array(
-        'versioning' => false,
+    private $defaultConfig = [
         'format' => null,
-    );
+    ];
     
     private $entityFactory;
     
     // форматирующие вывод объекты
-    private $responser = array();
+    private $responser = [];
     
     // параметры текущего обрабатываемого запроса АПИ
     private $apiConfig = null;
-    private $namespace = null;
-    private $version = null;
-    private $method = null;
-    private $params = [];
-    private $files = [];
-    private $behaviorConfig = [];
     
-    public function __construct($config, ApiEntityFactory $entityFactory, $behaviorConfig = [])
+    private $namespace = null;
+    
+    private $method = null;
+    
+    /** @var ParameterBag|null */
+    private $params = null;
+    
+    private $files = [];
+    
+    /** @var ParameterBag|null */
+    private $behavior = null;
+    
+    public function __construct(ParameterBag $config, ApiEntityFactory $entityFactory, ParameterBag $behaviorConfig = null)
     {
         $this->config = $config;
-        foreach ($config as $namespace => $item) {
-            if (is_array($item)) {
-                $this->config[$namespace] = array_merge($this->defaultConfig, $item);
-            }
-        }
         $this->entityFactory = $entityFactory;
         $this->behaviorConfig = $behaviorConfig;
     }
@@ -52,10 +55,10 @@ class Dispatcher
     /**
      *
      * @param string $code код респонсера
-     * @param \Library\Api\Responser\ResponserInterface $responser
-     * @return \Library\Api\Dispatcher
+     * @param ResponserInterface $responser
+     * @return Dispatcher
      */
-    public function addResponser($code, Responser\ResponserInterface $responser)
+    public function addResponser($code, ResponserInterface $responser)
     {
         $this->responser[$code] = $responser;
         return $this;
@@ -67,9 +70,9 @@ class Dispatcher
      * @return array
      * @throws \Exception
      */
-    public function execute(HttpRequest $request)
+    public function execute(Request $request)
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+        if ($request->getMethod() == Request::METHOD_OPTIONS) {
             $result = ['code' => 204];
             if (isset($this->responser[$this->apiConfig['format']])) {
                 $this->responser[$this->apiConfig['format']]->send($result);
@@ -94,11 +97,9 @@ class Dispatcher
             $result = call_user_func(array($object, $this->method), $this->params, $this->files);
             $error = false;
         } catch (\Exception $e) {
-            // в случае ошибки вызываем метод интерфейса ApiInterface::lastError()
-            //$result = $object->lastError();
             $error = $e->getCode();
         }
-        
+         
         $this->fetchConfig($this->namespace);
         
         // если есть соответствующий респонсер - вызываем его
@@ -114,38 +115,47 @@ class Dispatcher
      * @param Request $request
      * @throws \Exception
      */
-    private function parseRequest(HttpRequest $request)
+    private function parseRequest(Request $request)
     {
-        $path = $request->getRequestedPage();
+        $path = $request->getPathInfo();
         
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $this->params = $request->getPostList();
-            $this->files = $request->getFileList()->toArray();
-            if (count($this->files) > 1) {
-                foreach ($this->files as $key => $file) {
-                    $this->files[$key] = $this->normalizeFiles($this->files[$key]);
-                }
+        if (in_array($request->getMethod(), ['POST', 'PUT', 'DELETE', 'PATCH'])) {
+            $json = json_decode($request->getContent(), true);
+            if ($json) {
+                $this->params = $json;
+            } else {
+                $this->params = $request->request->all();
+            }
+
+            foreach ($_FILES as $key => $file) {
+                $this->files[$key] = $this->normalizeFiles($_FILES[$key]);
             }
         } else {
-            $this->params = $request->getQueryList();
+            $this->params = $request->query->all();
         }
+    
+        $path = rtrim($path, '/');
+        $this->method = explode('/', $path);
+        $this->method = end($this->method);
+
+        $factory = DocBlockFactory::createInstance();
         
-        $path = trim($path, '/');
-        
-        $path = str_replace('.', '_', $path);
-        
-        if (!preg_match(self::REGEXP_PATH, $path, $m) && !preg_match(self::REGEXP_PATH_VERSIONING, $path, $m)) {
-            throw new \Exception(self::E_INCORRECT_REQUEST);
-        }
-        
-        // извлекаем namespace
-        $m = null;
-        if (preg_match(self::REGEXP_PATH, $path, $m)) {
-            $this->namespace = ucfirst($m[1]) . "\\" . ucfirst($m[2]) . "\\" . ucfirst($m[3]);
-            $this->method = $m[4];
-        } elseif (preg_match(self::REGEXP_PATH_VERSIONING, $path, $m)) {
-            $this->namespace = ucfirst($m[1]) . "\\" . ucfirst($m[2]) . "\\" . $m[3] . "\\" . ucfirst($m[4]);
-            $this->method = $m[5];
+        foreach ($this->config->getIterator() as $className => $item) {
+            $rClass = new \ReflectionClass($className);
+            
+            if ($rClass->hasMethod($this->method)) {
+                /** @var \phpDocumentor\Reflection\DocBlock $docblock */
+                $docblock = $factory->create($rClass->getMethod($this->method));
+                $tags = $docblock->getTagsByName('OA\\' . ucfirst(strtolower($request->getMethod())));
+                
+                foreach ($tags as $tag) {
+                    if (preg_match(self::REGEXP_PATH, (string)$tag->getDescription(), $m)) {
+                        if ($m[1] == $path || substr($m[1], 0, -1) == $path) {
+                            $this->namespace = $className;
+                        }
+                    }
+                }
+            }
         }
     }
     
@@ -155,25 +165,25 @@ class Dispatcher
      */
     private function fetchConfig($namespace)
     {
-        $this->apiConfig = isset($this->config[$namespace])
-            ? $this->config[$namespace]
-            : $this->defaultConfig;
+        $this->apiConfig = $this->config->get($namespace);
     }
     
     private function normalizeFiles($files)
     {
-        $files = [];
+        $result = [];
         $filesCount = count($files['name']);
         $filesKeys = array_keys($files);
-        
-        for ($i = 0; $i < $filesCount; $i++) {
-            foreach ($filesKeys as $key) {
-                $files[$i][$key] = $files[$key][$i];
+
+        if ($filesCount > 1) {
+            for ($i = 0; $i < $filesCount; $i++) {
+                foreach ($filesKeys as $key) {
+                    $result[$i][$key] = $files[$key][$i];
+                }
             }
+        } else {
+            $result = $files;
         }
         
-        return $files;
+        return $result;
     }
-    
 }
-
