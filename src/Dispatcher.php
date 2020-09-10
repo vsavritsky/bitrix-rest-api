@@ -128,7 +128,11 @@ class Dispatcher
             }
 
             foreach ($_FILES as $key => $file) {
-                $this->files[$key] = $this->normalizeFiles($_FILES[$key]);
+				if (is_array($_FILES[$key]['name'])) {
+					$this->files[$key] = $this->normalizeFiles($_FILES[$key]);
+				} else {
+					$this->files[$key] = $_FILES[$key];
+				}
             }
         } else {
             $this->params = $request->query->all();
@@ -174,14 +178,10 @@ class Dispatcher
         $filesCount = count($files['name']);
         $filesKeys = array_keys($files);
 
-        if ($filesCount > 1) {
-            for ($i = 0; $i < $filesCount; $i++) {
-                foreach ($filesKeys as $key) {
-                    $result[$i][$key] = $files[$key][$i];
-                }
-            }
-        } else {
-            $result = $files;
+		for ($i = 0; $i < $filesCount; $i++) {
+			foreach ($filesKeys as $key) {
+				$result[$i][$key] = $files[$key][$i];
+			}
         }
         
         return $result;
