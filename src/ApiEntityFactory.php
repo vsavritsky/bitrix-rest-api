@@ -2,7 +2,7 @@
 
 namespace BitrixRestApi;
 
-use BitrixRestApi\ApiInterface;
+use BitrixRestApi\Exception\ApiNotFoundException;
 
 class ApiEntityFactory
 {
@@ -19,7 +19,7 @@ class ApiEntityFactory
         // проверяем, реализует ли он интерфейс ApiInterface
         // используем is_subclass_of вместо instanceof чтобы не инстанцировать непроверенный класс
         if (!class_exists($className) || !is_subclass_of($className, ApiInterface::class, true)) {
-            throw new \Exception(self::E_UNKNOWN_API);
+            throw new ApiNotFoundException(self::E_UNKNOWN_API);
         }
         
         return new $className;

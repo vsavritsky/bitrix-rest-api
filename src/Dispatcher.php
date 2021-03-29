@@ -2,8 +2,15 @@
 
 namespace BitrixRestApi;
 
+use BitrixRestApi\Exception as BException;
+use BitrixRestApi\Jwt\JwtManagerInterface;
+use BitrixRestApi\Responser\Response;
 use BitrixRestApi\Responser\ResponserInterface;
+use BitrixRestApi\UserManager\UserManagerInterface;
+use Exception;
+use phpDocumentor\Reflection\DocBlock;
 use phpDocumentor\Reflection\DocBlockFactory;
+use ReflectionClass;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -15,41 +22,55 @@ class Dispatcher
     const E_INCORRECT_REQUEST = 'Incorrect API request';
     const E_UNKNOWN_METHOD = 'Unknown API method';
     
-    const REGEXP_PATH = '#path="([a-zA-Z0-9./-]*)"#';
+    const REGEXP_PATH = '#path="([a-zA-Z0-9./-{}]*)"#';
     
     // конфигурации всех АПИ
-    private $config = null;
+    protected $config = null;
     
     // дефолтное значение
-    private $defaultConfig = [
+    protected $defaultConfig = [
         'format' => null,
     ];
     
-    private $entityFactory;
+    protected $entityFactory;
     
     // форматирующие вывод объекты
-    private $responser = [];
+    protected $responser = [];
     
     // параметры текущего обрабатываемого запроса АПИ
-    private $apiConfig = null;
+    protected $apiConfig = null;
     
-    private $namespace = null;
+    protected $namespace = null;
     
-    private $method = null;
+    /** @var string|null */
+    protected $method = null;
+    
+    /** @var JwtManagerInterface|null */
+    protected $jwtManager = null;
+    
+    /** @var UserManagerInterface|null */
+    protected $userManager = null;
     
     /** @var ParameterBag|null */
-    private $params = null;
+    private $behaviorConfig = null;
     
-    private $files = [];
-    
-    /** @var ParameterBag|null */
-    private $behavior = null;
+    protected $user = null;
     
     public function __construct(ParameterBag $config, ApiEntityFactory $entityFactory, ParameterBag $behaviorConfig = null)
     {
         $this->config = $config;
         $this->entityFactory = $entityFactory;
         $this->behaviorConfig = $behaviorConfig;
+    }
+    
+    public function setJwtManager(JwtManagerInterface $jwtManager)
+    {
+        $this->jwtManager = $jwtManager;
+    }
+    
+    public function setUserManager(UserManagerInterface $userManager)
+    {
+        $this->userManager = $userManager;
     }
     
     /**
@@ -68,52 +89,69 @@ class Dispatcher
      * Обработка запроса $request и вызов соответствующего метода API
      * @param Request $request
      * @return array
-     * @throws \Exception
+     * @throws Exception
      */
     public function execute(Request $request)
     {
         if ($request->getMethod() == Request::METHOD_OPTIONS) {
             $result = ['code' => 204];
-            if (isset($this->responser[$this->apiConfig['format']])) {
-                $this->responser[$this->apiConfig['format']]->send($result);
-            }
+            $this->response($result);
             
             return $result;
         }
         
-        // рабираем строку запроса, вытаскиваем все подробности запроса
-        $this->parseRequest($request);
+        try {
+            // рабираем строку запроса, вытаскиваем все подробности запроса
+            $request = $this->parseRequest($request);
+        } catch (BException\NotAuthorizedException $e) {
+            $this->response(new Response\Security\TokenErrorResponse());
+        }
+        
+        $this->fetchConfig($this->namespace);
         
         // формируем имя класса
         $className = str_replace('/', '\\', $this->namespace);
         
-        $object = $this->entityFactory->create($className);
+        try {
+            $object = $this->entityFactory->create($className);
+        } catch (BException\ApiNotFoundException $e) {
+            $this->response(new Response\ApiNotFoundErrorResponse());
+        }
         
         if (!method_exists($object, $this->method)) {
-            throw new \Exception(self::E_UNKNOWN_METHOD);
+            $this->response(new Response\MethodNotFoundErrorResponse());
         }
         
         try {
-            $result = call_user_func(array($object, $this->method), $this->params, $this->files);
-            $error = false;
-        } catch (\Exception $e) {
-            $error = $e->getCode();
+            $object->setRequest($request);
+            $object->setUser($this->user);
+            $result = call_user_func(array($object, $this->method), $request);
+        } catch (\Throwable $e) {
+            $response = new Response\SystemErrorResponse();
+            $response->message = $e->getMessage();
+            $response->setTrace($e->getTraceAsString());
+            $this->response($response);
         }
-         
-        $this->fetchConfig($this->namespace);
         
+        $this->response($result);
+    }
+    
+    private function response($result)
+    {
         // если есть соответствующий респонсер - вызываем его
         if (isset($this->responser[$this->apiConfig['format']])) {
             $this->responser[$this->apiConfig['format']]->send((array)$result);
+        } else {
+            $responser = reset($this->responser);
+            $responser->send((array)$result);
         }
-        
-        return $result;
+        die();
     }
     
     /**
      * Разбираем строку запроса на параметры
      * @param Request $request
-     * @throws \Exception
+     * @throws Exception
      */
     private function parseRequest(Request $request)
     {
@@ -121,69 +159,102 @@ class Dispatcher
         
         if (in_array($request->getMethod(), ['POST', 'PUT', 'DELETE', 'PATCH'])) {
             $json = json_decode($request->getContent(), true);
-            if ($json) {
-                $this->params = $json;
-            } else {
-                $this->params = $request->request->all();
-            }
-
-            foreach ($_FILES as $key => $file) {
-				if (is_array($_FILES[$key]['name'])) {
-					$this->files[$key] = $this->normalizeFiles($_FILES[$key]);
-				} else {
-					$this->files[$key] = $_FILES[$key];
-				}
-            }
-        } else {
-            $this->params = $request->query->all();
-        }
-    
-        $path = rtrim($path, '/');
-        $this->method = explode('/', $path);
-        $this->method = end($this->method);
-
-        $factory = DocBlockFactory::createInstance();
-        
-        foreach ($this->config->getIterator() as $className => $item) {
-            $rClass = new \ReflectionClass($className);
             
-            if ($rClass->hasMethod($this->method)) {
-                /** @var \phpDocumentor\Reflection\DocBlock $docblock */
-                $docblock = $factory->create($rClass->getMethod($this->method));
-                $tags = $docblock->getTagsByName('OA\\' . ucfirst(strtolower($request->getMethod())));
-                
-                foreach ($tags as $tag) {
-                    if (preg_match(self::REGEXP_PATH, (string)$tag->getDescription(), $m)) {
-                        if ($m[1] == $path || substr($m[1], 0, -1) == $path) {
-                            $this->namespace = $className;
-                        }
-                    }
+            if ($json) {
+                foreach ($json as $key => $item) {
+                    $request->request->set($key, $item);
                 }
             }
         }
+        
+        $path = rtrim($path, '/');
+        $this->method = explode('/', $path);
+        $this->method = end($this->method);
+        
+        $factory = DocBlockFactory::createInstance();
+        
+        foreach ($this->config->getIterator() as $className => $item) {
+            $rClass = new ReflectionClass($className);
+            
+            if ($rClass->hasMethod($this->method)) {
+                /** @var DocBlock $docblock */
+                $docblock = $factory->create($rClass->getMethod($this->method));
+                
+                $tags = $docblock->getTagsByName('OA\\' . ucfirst(strtolower($request->getMethod())));
+                
+                $needAuth = false;
+                foreach ($tags as $tag) {
+                    if (preg_match("#@Security#", (string)$tag->getDescription(), $m)) {
+                        $needAuth = true;
+                    }
+                    
+                    if (preg_match(self::REGEXP_PATH, (string)$tag->getDescription(), $m)) {
+                        $parsePath = explode('/', $m[1]);
+                        $realPath = explode('/', $path);
+                        array_filter($parsePath, function ($value) {
+                            return empty($value) || $value == '/';
+                        });
+                        array_filter($realPath, function ($value) {
+                            return empty($value) || $value == '/';
+                        });
+                        
+                        $equal = true;
+                        foreach ($parsePath as $parsePathKey => $parsePathItem) {
+                            if ($parsePathItem != $realPath[$parsePathKey] && $parsePathItem[0] != '{') {
+                                $equal = false;
+                            }
+                            
+                            if ($parsePathItem[0] == '{') {
+                                $paramName = substr($parsePathItem, 1, strlen($parsePathItem) - 2);
+                                
+                                $request->request->set($paramName, $realPath[$parsePathKey]);
+                                $request->query->set($paramName, $realPath[$parsePathKey]);
+                            }
+                        }
+                        
+                        if ($equal) {
+                            $this->namespace = $className;
+    
+                            if ($needAuth) {
+                                $this->validateTokenRequest($request);
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+        
+        return $request;
+    }
+    
+    private function validateTokenRequest(Request $request)
+    {
+        if (!$this->jwtManager) {
+            throw new Exception('jwtManager not exist');
+        }
+    
+        $token = $this->jwtManager->getTokenFromRequest($request);
+        if (!$this->jwtManager->validate($token)) {
+            throw new BException\NotAuthorizedException();
+        }
+    
+        $userId = $this->jwtManager->getUserIdByToken($token);
+        $user = $this->userManager->getUserById($userId);
+        if (!$user) {
+            throw new BException\NotAuthorizedException();
+        }
+        
+        $this->user = $user;
     }
     
     /**
      * выбор конфига по неймспейсу
      * @param string $namespace
      */
-    private function fetchConfig($namespace)
+    private
+    function fetchConfig($namespace)
     {
         $this->apiConfig = $this->config->get($namespace);
-    }
-    
-    private function normalizeFiles($files)
-    {
-        $result = [];
-        $filesCount = count($files['name']);
-        $filesKeys = array_keys($files);
-
-		for ($i = 0; $i < $filesCount; $i++) {
-			foreach ($filesKeys as $key) {
-				$result[$i][$key] = $files[$key][$i];
-			}
-        }
-        
-        return $result;
     }
 }
