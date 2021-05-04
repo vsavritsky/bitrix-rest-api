@@ -34,6 +34,14 @@ class BaseErrorResponse extends AbstractResponse implements \JsonSerializable
         return $this->trace;
     }
     
+    /** @return self */
+    public function setMessage($message)
+    {
+        $this->message = $message;
+        
+        return $this;
+    }
+    
     /**
      * @param string|array $trace
      */
@@ -51,7 +59,8 @@ class BaseErrorResponse extends AbstractResponse implements \JsonSerializable
         return [
             'errorCode' => $this->errorCode,
             'message' => $this->message,
-            'trace' => $this->trace
+            'trace' => $this->trace,
+            'code' => $this->code
         ];
     }
 }

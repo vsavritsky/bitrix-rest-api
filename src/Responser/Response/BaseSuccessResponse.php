@@ -2,21 +2,23 @@
 
 namespace BitrixRestApi\Responser\Response;
 
-use Service\PictureResizeService;
-
 class BaseSuccessResponse extends AbstractResponse implements \JsonSerializable
 {
     public $code = 200;
     public $cacheId = null;
+    public $mapper = null;
     
-    /** @var PictureResizeService|null  */
+    /** @var PictureResizeService|null */
     protected $pictureResiseService = null;
+    
+    /** @var FileService|null */
+    protected $fileService = null;
+    
+    public static $resultFields = [];
     
     public function __construct($object = null)
     {
         parent::__construct($object);
-    
-        $this->pictureResiseService = new PictureResizeService();
     }
     
     public function setCacheId($cacheId)
@@ -26,8 +28,15 @@ class BaseSuccessResponse extends AbstractResponse implements \JsonSerializable
     
     public function jsonSerialize()
     {
-        return [
-            'cacheId' => $this->cacheId
-        ];
+        $result = [];
+        
+        foreach (static::$resultFields as $resultField) {
+            $result[$resultField] = $this->$resultField;
+        }
+        
+        $result['code'] = $this->code;
+        $result['cacheId'] = $this->cacheId;
+        
+        return $result;
     }
 }
