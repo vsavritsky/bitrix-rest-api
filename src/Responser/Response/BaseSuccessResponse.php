@@ -6,13 +6,6 @@ class BaseSuccessResponse extends AbstractResponse implements \JsonSerializable
 {
     public $code = 200;
     public $cacheId = null;
-    public $mapper = null;
-    
-    /** @var PictureResizeService|null */
-    protected $pictureResiseService = null;
-    
-    /** @var FileService|null */
-    protected $fileService = null;
     
     public static $resultFields = [];
     
