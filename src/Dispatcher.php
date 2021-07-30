@@ -19,7 +19,7 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class Dispatcher
 {
-    const REGEXP_PATH = '#path="([a-zA-Z0-9./-{}]*)"#';
+    const REGEXP_PATH = '#path="([a-zA-Z0-9./\-{}]*)"#';
 
     // конфигурации всех АПИ
     protected $config = null;
