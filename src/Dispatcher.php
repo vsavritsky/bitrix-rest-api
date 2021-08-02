@@ -188,24 +188,34 @@ class Dispatcher
             if (preg_match(self::REGEXP_PATH, (string)$tag->getDescription(), $m)) {
                 $parsePath = explode('/', $m[1]);
                 $realPath = explode('/', $path);
-                array_filter($parsePath, function ($value) {
-                    return empty($value) || $value == '/';
+                $parsePathElements = array_filter($parsePath, function ($value) {
+                    return !empty($value) && $value != '/';
                 });
-                array_filter($realPath, function ($value) {
-                    return empty($value) || $value == '/';
+                $realPathElements = array_filter($realPath, function ($value) {
+                    return !empty($value) && $value != '/';
                 });
+                $parsePath = implode('/', $parsePath);
+                $realPath = implode('/', $realPath);
 
-                $equal = true;
-                foreach ($parsePath as $parsePathKey => $parsePathItem) {
-                    if ($parsePathItem != $realPath[$parsePathKey] && $parsePathItem[0] != '{') {
-                        $equal = false;
+                if ($parsePath == $realPath) {
+                    $equal = true;
+                } elseif(strpos($parsePath, '{')) {
+                    $equal = true;
+                    foreach ($parsePathElements as $parsePathKey => $parsePathItem) {
+                        if ($parsePathItem != $realPathElements[$parsePathKey] && $parsePathItem[0] != '{') {
+                            $equal = false;
+                        }
                     }
 
-                    if ($parsePathItem[0] == '{') {
-                        $paramName = substr($parsePathItem, 1, strlen($parsePathItem) - 2);
+                    if ($equal) {
 
-                        $this->request->request->set($paramName, $realPath[$parsePathKey]);
-                        $this->request->query->set($paramName, $realPath[$parsePathKey]);
+                        foreach ($parsePathElements as $parsePathKey => $parsePathItem) {
+                            if ($parsePathItem[0] == '{') {
+                                $paramName = substr($parsePathItem, 1, strlen($parsePathItem) - 2);
+                                $this->request->request->set($paramName, $realPathElements[$parsePathKey]);
+                                $this->request->query->set($paramName, $realPathElements[$parsePathKey]);
+                            }
+                        }
                     }
                 }
 
