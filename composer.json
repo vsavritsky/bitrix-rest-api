@@ -3,14 +3,14 @@
     "description": "Библиотека для создания REST API в битриксе",
     "type": "library",
     "require": {
-    	"php": ">=7.1",
+    	"php": ">=7.2",
         "phpdocumentor/reflection-docblock": "4.*",
         "zircote/swagger-php": "^3.0",
         "vanderlee/swaggergen": "^2.3",
         "swagger-api/swagger-ui": "^3.28",
         "symfony/dotenv": "^4.4",
         "symfony/http-foundation": "^4.4",
-        "rbdwllr/reallysimplejwt": "^4.0"
+        "rbdwllr/reallysimplejwt": "^3.0"
     },
     "minimum-stability": "stable",
     "autoload": {
