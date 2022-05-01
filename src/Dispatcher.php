@@ -66,7 +66,7 @@ class Dispatcher
     {
         $this->userManager = $userManager;
     }
-    
+
     public function addResponser(string $code, ResponserInterface $responser): self
     {
         $this->responserList->set($code, $responser);
@@ -116,7 +116,7 @@ class Dispatcher
             $result = call_user_func([$object, $this->method], $this->request);
         } catch (\Throwable $e) {
             $response = new Response\SystemErrorResponse();
-            $response->message = $e->getMessage();
+            $response->message = $e->getMessage().' '.$e->getFile().' '.$e->getLine();
             $response->setTrace($e->getTraceAsString());
             $this->response($response);
         }
@@ -267,3 +267,4 @@ class Dispatcher
         $this->user = $user;
     }
 }
+
