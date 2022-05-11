@@ -259,7 +259,7 @@ class Dispatcher
         }
 
         $userId = $this->jwtManager->getUserIdByToken($token);
-        $user = $this->userManager->getUserById($userId);
+        $user = $this->userManager->findById($userId);
         if (!$user) {
             throw new BException\NotAuthorizedException();
         }
@@ -267,4 +267,3 @@ class Dispatcher
         $this->user = $user;
     }
 }
-

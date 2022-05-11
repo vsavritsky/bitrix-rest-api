@@ -4,5 +4,6 @@ namespace BitrixRestApi\UserManager;
 
 interface UserManagerInterface
 {
-    public function getUserById($id);
+    public function findById($id);
 }
+
