@@ -223,8 +223,16 @@ class Dispatcher
                     continue;
                 }
 
+                if ($needAuth && !$this->jwtManager) {
+                    throw new Exception('jwtManager not exist');
+                }
+
+                if ($this->getToken()) {
+                    $this->getUserByToken($this->getToken());
+                }
+
                 if ($needAuth) {
-                    $this->validateTokenRequest();
+                    $this->validateAuth();
                 }
 
                 return true;
@@ -247,15 +255,24 @@ class Dispatcher
         return $methods;
     }
 
-    private function validateTokenRequest()
+    private function getToken(): string
     {
         if (!$this->jwtManager) {
             throw new Exception('jwtManager not exist');
         }
 
         $token = $this->jwtManager->getTokenFromRequest($this->request);
-        if (!$this->jwtManager->validate($token)) {
-            throw new BException\NotAuthorizedException();
+        if ($token && $this->jwtManager->validate($token)) {
+            return $token;
+        }
+
+        return '';
+    }
+
+    private function getUserByToken(string $token)
+    {
+        if (!$this->jwtManager) {
+            throw new Exception('jwtManager not exist');
         }
 
         $userId = $this->jwtManager->getUserIdByToken($token);
@@ -265,5 +282,21 @@ class Dispatcher
         }
 
         $this->user = $user;
+
+        return $user;
+    }
+
+    private function validateAuth()
+    {
+        if (!$this->jwtManager) {
+            throw new Exception('jwtManager not exist');
+        }
+
+        $token = $this->getToken();
+        $user = $this->getUserByToken($token);
+
+        if (!$user) {
+            throw new BException\NotAuthorizedException();
+        }
     }
 }
