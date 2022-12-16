@@ -23,7 +23,7 @@ class JwtManager implements JwtManagerInterface
 
     public function getTokenFromRequest(Request $request): ?string
     {
-        return $token = (string)($request->headers->get('apiKey') ?? $request->cookies->get('apiKey'));
+        return $token = str_replace('Bearer ', '', (string)($request->headers->get('Authorization') ?? $request->cookies->get('Authorization')));
     }
 
     public function create($userId, $issuer = 'localhost'): string
