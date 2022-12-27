@@ -48,6 +48,6 @@ class JwtManager implements JwtManagerInterface
 
         $payload = $parsed->getPayload();
 
-        return $payload['user_id'];
+        return (string)$payload['user_id'];
     }
 }
