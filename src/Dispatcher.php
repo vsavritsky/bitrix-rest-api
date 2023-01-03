@@ -191,6 +191,8 @@ class Dispatcher
         $path = $this->request->getPathInfo();
         $path = rtrim($path, '/');
 
+        $this->cacheEnabled = false;
+        $this->cacheTimeoutInSeconds = -1;
         $needAuth = false;
         foreach ($tags as $tag) {
             if (preg_match("#SecurityScheme#", (string)$tag->getDescription(), $m)) {
