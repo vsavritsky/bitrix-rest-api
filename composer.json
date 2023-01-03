@@ -1,22 +1,25 @@
 {
-    "name": "vsavritsky/bitrix-rest-api",
-    "description": "Библиотека для создания REST API в битриксе",
-    "type": "library",
-    "require": {
-    	"php": ">=7.2",
-        "phpdocumentor/reflection-docblock": "4.*",
-        "zircote/swagger-php": "^3.0",
-        "vanderlee/swaggergen": "^2.3",
-        "swagger-api/swagger-ui": "^3.28",
-        "symfony/dotenv": "^4.4",
-        "symfony/http-foundation": "^4.4",
-        "rbdwllr/reallysimplejwt": "^3.0"
-    },
-    "minimum-stability": "stable",
-    "autoload": {
-        "psr-4": {
-            "BitrixRestApi\\": "src"
-        }
+  "name": "vsavritsky/bitrix-rest-api",
+  "description": "Библиотека для создания REST API в битриксе",
+  "type": "library",
+  "require": {
+    "php": ">=8.0",
+    "vsavritsky/bitrix-class-loader-helper": "^0.0.1",
+    "phpdocumentor/reflection-docblock": "5.3.0",
+    "vsavritsky/bitrix-service-container": "^0.0.3",
+    "vsavritsky/bitrix-rest-api-cache": "^0.0.2",
+    "vsavritsky/bitrix-filter-builder": "^0.0.3",
+    "zircote/swagger-php": "^4.3.0",
+    "vanderlee/swaggergen": "^2.3.21",
+    "swagger-api/swagger-ui": "^v3.52.5",
+    "symfony/dotenv": "^v6.1.0",
+    "symfony/http-foundation": "^v5.4.17",
+    "rbdwllr/reallysimplejwt": "^5.0.0"
+  },
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "BitrixRestApi\\": "src"
     }
-
+  }
 }

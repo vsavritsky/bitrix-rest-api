@@ -7,10 +7,13 @@ use BitrixRestApi\Jwt\JwtManagerInterface;
 use BitrixRestApi\Responser\Response;
 use BitrixRestApi\Responser\ResponserInterface;
 use BitrixRestApi\UserManager\UserManagerInterface;
+use BitrixRestApiCache\Cache\PhpCache;
 use Exception;
 use phpDocumentor\Reflection\DocBlock;
 use phpDocumentor\Reflection\DocBlockFactory;
 use ReflectionClass;
+use Response\Seo\SeoDataResponse;
+use Service\SeoService;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -21,34 +24,27 @@ class Dispatcher
 {
     const REGEXP_PATH = '#path="([a-zA-Z0-9./\-{}]*)"#';
 
-    // конфигурации всех АПИ
-    protected $config = null;
+    protected ?ParameterBag $config = null;
 
-    protected $entityFactory;
+    protected ?ApiEntityFactory $entityFactory;
 
-    /** @var ResponserInterface */
-    protected $responser = null;
+    protected ?ResponserInterface $responser = null;
 
-    /** @var ParameterBag|null */
-    protected $responserList = null;
+    protected ?ParameterBag $responserList = null;
 
-    /** @var string|null  */
-    protected $namespace = null;
+    protected ?string $namespace = null;
 
-    /** @var string|null  */
-    protected $method = null;
+    protected ?string $method = null;
+    protected ?JwtManagerInterface $jwtManager = null;
 
-    /** @var JwtManagerInterface|null */
-    protected $jwtManager = null;
+    protected ?UserManagerInterface $userManager = null;
 
-    /** @var UserManagerInterface|null */
-    protected $userManager = null;
+    protected Request $request;
 
-    /** @var Request */
-    protected $request;
-
-    /** @var null  */
     protected $user = null;
+
+    protected bool $cacheEnabled = false;
+    protected int $cacheTimeoutInSeconds = 0;
 
     public function __construct(ParameterBag $config, ApiEntityFactory $entityFactory)
     {
@@ -111,12 +107,23 @@ class Dispatcher
         }
 
         try {
-            $object->setRequest($this->request);
-            $object->setUser($this->user);
-            $result = call_user_func([$object, $this->method], $this->request);
+            if (!$this->cacheEnabled) {
+                $object->setRequest($this->request);
+                $object->setUser($this->user);
+                $result = call_user_func([$object, $this->method], $this->request);
+            } else {
+                $cache = new PhpCache($this->request);
+                $result = $cache->init($this->cacheTimeoutInSeconds);
+                if (!$result) {
+                    $object->setRequest($this->request);
+                    $object->setUser($this->user);
+                    $result = call_user_func([$object, $this->method], $this->request);
+                    $cache->cache($result);
+                }
+            }
         } catch (\Throwable $e) {
             $response = new Response\SystemErrorResponse();
-            $response->message = $e->getMessage().' '.$e->getFile().' '.$e->getLine();
+            $response->message = $e->getMessage() . ' ' . $e->getFile() . ' ' . $e->getLine();
             $response->setTrace($e->getTraceAsString());
             $this->response($response);
         }
@@ -185,6 +192,11 @@ class Dispatcher
                 $needAuth = true;
             }
 
+            if (preg_match("#cacheTimeoutInSeconds=(\d+)#", (string)$tag->getDescription(), $m)) {
+                $this->cacheEnabled = true;
+                $this->cacheTimeoutInSeconds = $m[1];
+            }
+
             if (preg_match(self::REGEXP_PATH, (string)$tag->getDescription(), $m)) {
                 $parsePath = explode('/', $m[1]);
                 $realPath = explode('/', $path);
@@ -199,7 +211,7 @@ class Dispatcher
 
                 if ($parsePath == $realPath) {
                     $equal = true;
-                } elseif(strpos($parsePath, '{')) {
+                } elseif (strpos($parsePath, '{')) {
                     $equal = true;
                     foreach ($parsePathElements as $parsePathKey => $parsePathItem) {
                         if ($parsePathItem != $realPathElements[$parsePathKey] && $parsePathItem[0] != '{') {
