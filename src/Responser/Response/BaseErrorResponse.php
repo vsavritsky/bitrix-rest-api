@@ -6,25 +6,25 @@ use Swagger\Annotations as SWG;
 
 class BaseErrorResponse extends AbstractResponse implements \JsonSerializable
 {
-    public $code = 400;
+    public int $code = 400;
 
     /**
      * @var string
      * @SWG\Property(type="string", description="Код ошибки")
      */
-    public $errorCode = 'custom';
+    public string $errorCode = 'custom';
 
     /**
      * @var string
      * @SWG\Property(type="string", description="Текст ошибки")
      */
-    public $message = '';
+    public string $message = '';
 
     /**
      * @var string
      * @SWG\Property(type="string", description="Трейс ошибки")
      */
-    public $trace = '';
+    public string $trace = '';
 
     /**
      * @return string
