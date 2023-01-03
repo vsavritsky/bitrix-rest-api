@@ -118,6 +118,11 @@ class Dispatcher
                     $object->setRequest($this->request);
                     $object->setUser($this->user);
                     $result = call_user_func([$object, $this->method], $this->request);
+
+                    foreach ($result->getTags() as $tag) {
+                        $cache->addTag($tag);
+                    }
+
                     $cache->cache($result);
                 }
             }
