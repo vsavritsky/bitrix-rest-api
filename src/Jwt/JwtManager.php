@@ -3,7 +3,6 @@
 namespace BitrixRestApi\Jwt;
 
 use ReallySimpleJWT\Decode;
-use ReallySimpleJWT\Encode;
 use ReallySimpleJWT\Jwt;
 use ReallySimpleJWT\Parse;
 use ReallySimpleJWT\Token;
@@ -41,9 +40,7 @@ class JwtManager implements JwtManagerInterface
     public function getUserIdByToken(string $token): string
     {
         $jwt = new Jwt($token, $this->secret);
-        $encode = new Encode();
-        $validate = new Validate();
-        $parse = new Parse($jwt, $validate, $encode);
+        $parse = new Parse($jwt, new Decode());
         $parsed = $parse->parse();
 
         $payload = $parsed->getPayload();
