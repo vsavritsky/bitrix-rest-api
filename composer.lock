@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9adfe97a96097222d750cca5a99b7f92",
+    "content-hash": "920579bd01dbeaa900e8cf57f0b7c89c",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1374,6 +1374,39 @@
                 "source": "https://github.com/vsavritsky/bitrix-filter-builder/tree/0.0.3"
             },
             "time": "2022-05-11T17:46:25+00:00"
+        },
+        {
+            "name": "vsavritsky/bitrix-models",
+            "version": "0.0.18",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vsavritsky/bitrix-models.git",
+                "reference": "f4409763ce9884005e7eb3ee4d7b525d94beed57"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vsavritsky/bitrix-models/zipball/f4409763ce9884005e7eb3ee4d7b525d94beed57",
+                "reference": "f4409763ce9884005e7eb3ee4d7b525d94beed57",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "vsavritsky/bitrix-class-loader-helper": "^0.0.1",
+                "vsavritsky/bitrix-filter-builder": "^0.0.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BitrixModels\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Библиотека для работы с инфоблоками, хайлоадами и т.п как сущностями",
+            "support": {
+                "issues": "https://github.com/vsavritsky/bitrix-models/issues",
+                "source": "https://github.com/vsavritsky/bitrix-models/tree/0.0.18"
+            },
+            "time": "2023-01-06T10:04:33+00:00"
         },
         {
             "name": "vsavritsky/bitrix-rest-api-cache",
