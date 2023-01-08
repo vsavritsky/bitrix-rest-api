@@ -54,7 +54,7 @@ class AbstractApiController implements ApiInterface
         return $this->request;
     }
 
-    public function setUser($user)
+    public function setUser(BaseModel $user = null)
     {
         if ($user) {
             $this->user = $user;
