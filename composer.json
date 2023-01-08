@@ -15,7 +15,7 @@
     "symfony/dotenv": "^v6.0.0",
     "symfony/http-foundation": "^v5.4.17",
     "rbdwllr/reallysimplejwt": "^5.0.0",
-    "vsavritsky/bitrix-models": "^0.0.18"
+    "vsavritsky/bitrix-models": "^0.0.19"
   },
   "minimum-stability": "stable",
   "autoload": {
