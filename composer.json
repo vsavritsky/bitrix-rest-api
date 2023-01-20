@@ -15,9 +15,9 @@
     "swagger-api/swagger-ui": "^v3.52.5",
     "symfony/dotenv": "^v6.0.0",
     "vsavritsky/bitrix-models": "^0.0.21",
-    "chadicus/slim-oauth2-routes": "dev-next",
-    "chadicus/slim-oauth2-middleware": "dev-next",
-    "chadicus/slim-oauth2-http": "dev-next",
+    "vsavritsky/slim-oauth2-routes": "^v4.0.0",
+    "vsavritsky/slim-oauth2-middleware": "^v4.0.0",
+    "vsavritsky/slim-oauth2-http": "^v4.0.0",
     "vsavritsky/bitrix-rest-api-smart-filter": "^0.0.5"
   },
   "minimum-stability": "stable",
@@ -25,20 +25,5 @@
     "psr-4": {
       "BitrixRestApi\\": "src"
     }
-  },
-  "require-all": true,
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/tchapi/slim-oauth2-routes"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/tchapi/slim-oauth2-middleware"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/tchapi/slim-oauth2-http"
-    }
-  ]
+  }
 }

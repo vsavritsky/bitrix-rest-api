@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f376ec1ed2cb73250ce89bf73d0dd61",
+    "content-hash": "ad513c8d4722665585c134bd6cf3b6f2",
     "packages": [
         {
             "name": "bshaffer/oauth2-server-php",
@@ -68,196 +68,6 @@
                 "source": "https://github.com/bshaffer/oauth2-server-php/tree/v1.13.0"
             },
             "time": "2022-10-12T17:33:08+00:00"
-        },
-        {
-            "name": "chadicus/slim-oauth2-http",
-            "version": "dev-next",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tchapi/slim-oauth2-http.git",
-                "reference": "bfb0cdfac9727247c88bc9e5012f05557da1c6d3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tchapi/slim-oauth2-http/zipball/bfb0cdfac9727247c88bc9e5012f05557da1c6d3",
-                "reference": "bfb0cdfac9727247c88bc9e5012f05557da1c6d3",
-                "shasum": ""
-            },
-            "require": {
-                "bshaffer/oauth2-server-php": "^1.8",
-                "laminas/laminas-diactoros": "^2.8",
-                "php": "^7.4 || ^8.0"
-            },
-            "require-dev": {
-                "php-coveralls/php-coveralls": "^2.5",
-                "phpunit/phpunit": "^8.5",
-                "squizlabs/php_codesniffer": "^3.2"
-            },
-            "suggest": {
-                "chadicus/slim-oauth2-middleware": "Adds OAuth2 middleware for API requests.",
-                "chadicus/slim-oauth2-routes": "Offers standard OAuth2 routes for slim applications"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Chadicus\\Slim\\OAuth2\\Http\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "ChadicusTest\\Slim\\OAuth2\\Http\\": "tests"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Chad Gray",
-                    "email": "chadwickgray@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Bridge components for PSR-7 and bshaffer's OAuth2 Server http messages.",
-            "keywords": [
-                "bridge",
-                "http",
-                "message",
-                "oauth2",
-                "psr7",
-                "request",
-                "response",
-                "slim"
-            ],
-            "support": {
-                "source": "https://github.com/tchapi/slim-oauth2-http/tree/next"
-            },
-            "time": "2022-01-19T16:53:23+00:00"
-        },
-        {
-            "name": "chadicus/slim-oauth2-middleware",
-            "version": "dev-next",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tchapi/slim-oauth2-middleware.git",
-                "reference": "433513ce6cced835b1415dd1a6137f7d0ee30087"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tchapi/slim-oauth2-middleware/zipball/433513ce6cced835b1415dd1a6137f7d0ee30087",
-                "reference": "433513ce6cced835b1415dd1a6137f7d0ee30087",
-                "shasum": ""
-            },
-            "require": {
-                "bshaffer/oauth2-server-php": "^1.11",
-                "chadicus/slim-oauth2-http": "dev-next",
-                "php": "^7.4 || ^8.0",
-                "psr/http-message": "^1.0",
-                "psr/http-server-handler": "^1.0",
-                "psr/http-server-middleware": "^1.0"
-            },
-            "require-dev": {
-                "laminas/laminas-diactoros": "^2.8",
-                "php-coveralls/php-coveralls": "^2.5",
-                "phpunit/phpunit": "^8.5",
-                "squizlabs/php_codesniffer": "^3.2"
-            },
-            "suggest": {
-                "chadicus/slim-oauth2-routes": "Offers standard OAuth2 routes for slim applications"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Chadicus\\Slim\\OAuth2\\Middleware\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "ChadicusTest\\Slim\\OAuth2\\Middleware\\": "tests"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Chad Gray",
-                    "email": "chadwickgray@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "OAuth2 middleware for use within a Slim Framework API",
-            "keywords": [
-                "middleware",
-                "oauth2",
-                "slim"
-            ],
-            "support": {
-                "source": "https://github.com/tchapi/slim-oauth2-middleware/tree/next"
-            },
-            "time": "2022-01-19T14:44:41+00:00"
-        },
-        {
-            "name": "chadicus/slim-oauth2-routes",
-            "version": "dev-next",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tchapi/slim-oauth2-routes.git",
-                "reference": "9af74b7e57e24c5eb3a5d330ab863cdb913aa0d5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tchapi/slim-oauth2-routes/zipball/9af74b7e57e24c5eb3a5d330ab863cdb913aa0d5",
-                "reference": "9af74b7e57e24c5eb3a5d330ab863cdb913aa0d5",
-                "shasum": ""
-            },
-            "require": {
-                "bshaffer/oauth2-server-php": "^1.9",
-                "chadicus/slim-oauth2-http": "dev-next",
-                "php": "^7.4 || ^8.0"
-            },
-            "require-dev": {
-                "laminas/laminas-diactoros": "^2.8",
-                "php-coveralls/php-coveralls": "^2.5",
-                "phpunit/phpunit": "^8.5",
-                "slim/php-view": "^2.0.5",
-                "squizlabs/php_codesniffer": "^3.2"
-            },
-            "suggest": {
-                "chadicus/slim-oauth2-middleware": "Adds OAuth2 middleware for API requests.",
-                "slim/php-view": "Simple template rendering"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Chadicus\\Slim\\OAuth2\\Routes\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "ChadicusTest\\Slim\\OAuth2\\Routes\\": "tests"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Chad Gray",
-                    "email": "chadwickgray@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "OAuth2 routes for use within a Slim Framework API",
-            "keywords": [
-                "oauth2",
-                "routing",
-                "slim"
-            ],
-            "support": {
-                "source": "https://github.com/tchapi/slim-oauth2-routes/tree/next"
-            },
-            "time": "2022-01-19T14:44:46+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2406,6 +2216,184 @@
             "time": "2023-01-20T19:57:55+00:00"
         },
         {
+            "name": "vsavritsky/slim-oauth2-http",
+            "version": "v4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vsavritsky/slim-oauth2-http.git",
+                "reference": "615e61acf4112da00ec62325a23c4629a967de73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vsavritsky/slim-oauth2-http/zipball/615e61acf4112da00ec62325a23c4629a967de73",
+                "reference": "615e61acf4112da00ec62325a23c4629a967de73",
+                "shasum": ""
+            },
+            "require": {
+                "bshaffer/oauth2-server-php": "^1.8",
+                "laminas/laminas-diactoros": "^2.8",
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpunit/phpunit": "^8.5",
+                "squizlabs/php_codesniffer": "^3.2"
+            },
+            "suggest": {
+                "chadicus/slim-oauth2-middleware": "Adds OAuth2 middleware for API requests.",
+                "chadicus/slim-oauth2-routes": "Offers standard OAuth2 routes for slim applications"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Chadicus\\Slim\\OAuth2\\Http\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chad Gray",
+                    "email": "chadwickgray@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Bridge components for PSR-7 and bshaffer's OAuth2 Server http messages.",
+            "keywords": [
+                "Bridge",
+                "http",
+                "message",
+                "oauth2",
+                "psr7",
+                "request",
+                "response",
+                "slim"
+            ],
+            "support": {
+                "source": "https://github.com/vsavritsky/slim-oauth2-http/tree/v4.0.0"
+            },
+            "time": "2023-01-20T21:13:39+00:00"
+        },
+        {
+            "name": "vsavritsky/slim-oauth2-middleware",
+            "version": "v4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vsavritsky/slim-oauth2-middleware.git",
+                "reference": "c813eef70733f3d7f4b7b2ffe57d91684e8df702"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vsavritsky/slim-oauth2-middleware/zipball/c813eef70733f3d7f4b7b2ffe57d91684e8df702",
+                "reference": "c813eef70733f3d7f4b7b2ffe57d91684e8df702",
+                "shasum": ""
+            },
+            "require": {
+                "bshaffer/oauth2-server-php": "^1.11",
+                "php": "^7.4 || ^8.0",
+                "psr/http-message": "^1.0",
+                "psr/http-server-handler": "^1.0",
+                "psr/http-server-middleware": "^1.0",
+                "vsavritsky/slim-oauth2-http": "^4.0"
+            },
+            "require-dev": {
+                "laminas/laminas-diactoros": "^2.8",
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpunit/phpunit": "^8.5",
+                "squizlabs/php_codesniffer": "^3.2"
+            },
+            "suggest": {
+                "chadicus/slim-oauth2-routes": "Offers standard OAuth2 routes for slim applications"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Chadicus\\Slim\\OAuth2\\Middleware\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chad Gray",
+                    "email": "chadwickgray@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "OAuth2 middleware for use within a Slim Framework API",
+            "keywords": [
+                "middleware",
+                "oauth2",
+                "slim"
+            ],
+            "support": {
+                "source": "https://github.com/vsavritsky/slim-oauth2-middleware/tree/v4.0.0"
+            },
+            "time": "2023-01-20T21:26:30+00:00"
+        },
+        {
+            "name": "vsavritsky/slim-oauth2-routes",
+            "version": "v4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vsavritsky/slim-oauth2-routes.git",
+                "reference": "6de9928191d9f266dd763bff82616cfcdb26c296"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vsavritsky/slim-oauth2-routes/zipball/6de9928191d9f266dd763bff82616cfcdb26c296",
+                "reference": "6de9928191d9f266dd763bff82616cfcdb26c296",
+                "shasum": ""
+            },
+            "require": {
+                "bshaffer/oauth2-server-php": "^1.9",
+                "php": "^7.4 || ^8.0",
+                "vsavritsky/slim-oauth2-http": "^4.0"
+            },
+            "require-dev": {
+                "laminas/laminas-diactoros": "^2.8",
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpunit/phpunit": "^8.5",
+                "slim/php-view": "^2.0.5",
+                "squizlabs/php_codesniffer": "^3.2"
+            },
+            "suggest": {
+                "chadicus/slim-oauth2-middleware": "Adds OAuth2 middleware for API requests.",
+                "slim/php-view": "Simple template rendering"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Chadicus\\Slim\\OAuth2\\Routes\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chad Gray",
+                    "email": "chadwickgray@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "OAuth2 routes for use within a Slim Framework API",
+            "keywords": [
+                "oauth2",
+                "routing",
+                "slim"
+            ],
+            "support": {
+                "source": "https://github.com/vsavritsky/slim-oauth2-routes/tree/v4.0.0"
+            },
+            "time": "2023-01-20T21:15:20+00:00"
+        },
+        {
             "name": "zircote/swagger-php",
             "version": "4.6.0",
             "source": {
@@ -2487,11 +2475,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "chadicus/slim-oauth2-routes": 20,
-        "chadicus/slim-oauth2-middleware": 20,
-        "chadicus/slim-oauth2-http": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
