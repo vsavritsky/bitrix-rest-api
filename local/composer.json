@@ -1,0 +1,35 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "php-di/php-di": "^6.4",
+        "slim/slim": "^4.11",
+        "vsavritsky/bitrix-models": "^0.0.20",
+        "monolog/monolog": "^2.8",
+        "ext-json": "*",
+        "vsavritsky/bitrix-rest-api": "^5.2",
+        "slim/psr7": "^1.6",
+        "vsavritsky/bitrix-rest-api-cache": "^0.0.2",
+        "chadicus/slim-oauth2-routes": "dev-next",
+        "chadicus/slim-oauth2-middleware": "dev-next",
+        "chadicus/slim-oauth2-http": "dev-next",
+        "vsavritsky/bitrix-rest-api-smart-filter": "^0.0.5"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/tchapi/slim-oauth2-routes"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tchapi/slim-oauth2-middleware"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tchapi/slim-oauth2-http"
+        }
+    ]
+}

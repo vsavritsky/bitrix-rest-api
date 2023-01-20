@@ -7,7 +7,7 @@ class BaseSuccessResponse extends AbstractResponse implements \JsonSerializable
     public int $code = 200;
     public string|null $cacheId = null;
 
-    public array $tags = [];
+    public array $cacheTags = [];
 
     public static $resultFields = [];
 
@@ -24,23 +24,23 @@ class BaseSuccessResponse extends AbstractResponse implements \JsonSerializable
     /**
      * @return array
      */
-    public function getTags(): array
+    public function getCacheTags(): array
     {
-        return $this->tags;
+        return $this->cacheTags;
     }
 
-    public function addTag($tag)
+    public function addCacheTag($tag)
     {
-        $this->tags[] = $tag;
+        $this->cacheTags[] = $tag;
     }
 
-    public function addTagList($list)
+    public function addCacheTagList($list)
     {
         foreach ($list as $item) {
             if (is_object($item)) {
-                $this->addTag($item->getId());
-            } elseif (is_array($item) && isset($item['ID'])) {
-                $this->addTag($item['ID']);
+                $this->addCacheTag($item->getId());
+            } elseif (is_array($item) && isset($item['id'])) {
+                $this->addCacheTag((int)$item['id']);
             }
         }
     }
@@ -48,9 +48,9 @@ class BaseSuccessResponse extends AbstractResponse implements \JsonSerializable
     /**
      * @param array $tags
      */
-    public function setTags(array $tags): void
+    public function setCacheTags(array $tags): void
     {
-        $this->tags = $tags;
+        $this->cacheTags = $tags;
     }
 
     public function jsonSerialize()
@@ -63,6 +63,7 @@ class BaseSuccessResponse extends AbstractResponse implements \JsonSerializable
 
         $result['code'] = $this->code;
         $result['cacheId'] = $this->cacheId;
+        $result['cacheTags'] = $this->getCacheTags();
 
         return $result;
     }
