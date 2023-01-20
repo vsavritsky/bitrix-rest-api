@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "544ea994fdf1f6b27a0c3d26c3556d11",
+    "content-hash": "a701469357eca14a47a39207c44475d5",
     "packages": [
         {
             "name": "bshaffer/oauth2-server-php",
@@ -2055,6 +2055,38 @@
                 "source": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter/tree/0.0.5"
             },
             "time": "2023-01-20T19:57:55+00:00"
+        },
+        {
+            "name": "vsavritsky/bitrix-service-container",
+            "version": "0.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vsavritsky/bitrix-service-container.git",
+                "reference": "ce4b15132ff40e2ebbef3924b5e149ecf2f1b9de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vsavritsky/bitrix-service-container/zipball/ce4b15132ff40e2ebbef3924b5e149ecf2f1b9de",
+                "reference": "ce4b15132ff40e2ebbef3924b5e149ecf2f1b9de",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1",
+                "vsavritsky/bitrix-class-loader-helper": "^0.0.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BitrixServiceContainer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Библиотека сервис контейнера",
+            "support": {
+                "issues": "https://github.com/vsavritsky/bitrix-service-container/issues",
+                "source": "https://github.com/vsavritsky/bitrix-service-container/tree/0.0.3"
+            },
+            "time": "2022-04-07T20:22:31+00:00"
         },
         {
             "name": "vsavritsky/slim-oauth2-http",
