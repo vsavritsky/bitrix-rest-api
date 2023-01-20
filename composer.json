@@ -8,8 +8,6 @@
     "slim/slim": "^4.11",
     "php-di/php-di": "^6.4",
     "vsavritsky/bitrix-class-loader-helper": "^0.0.1",
-    "phpdocumentor/reflection-docblock": "5.3.0",
-    "vsavritsky/bitrix-service-container": "^0.0.3",
     "vsavritsky/bitrix-rest-api-cache": "^0.0.2",
     "vsavritsky/bitrix-filter-builder": "^0.0.3",
     "zircote/swagger-php": "^4.3.0",
@@ -28,6 +26,7 @@
       "BitrixRestApi\\": "src"
     }
   },
+  "require-all": true,
   "repositories": [
     {
       "type": "vcs",
