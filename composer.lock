@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "41449ab0b3adeef76225660ba8f0fd24",
+    "content-hash": "236f1f6562b00e2197cc05c115db4d8a",
     "packages": [
         {
             "name": "bshaffer/oauth2-server-php",
@@ -1929,16 +1929,16 @@
         },
         {
             "name": "vsavritsky/bitrix-models",
-            "version": "0.0.24",
+            "version": "0.0.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vsavritsky/bitrix-models.git",
-                "reference": "29666583bbaa050474e2d70c1e70698faf7446d0"
+                "reference": "d93c961b8140e93216c471b2bf8e6bf9a5f49a0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vsavritsky/bitrix-models/zipball/29666583bbaa050474e2d70c1e70698faf7446d0",
-                "reference": "29666583bbaa050474e2d70c1e70698faf7446d0",
+                "url": "https://api.github.com/repos/vsavritsky/bitrix-models/zipball/d93c961b8140e93216c471b2bf8e6bf9a5f49a0b",
+                "reference": "d93c961b8140e93216c471b2bf8e6bf9a5f49a0b",
                 "shasum": ""
             },
             "require": {
@@ -1955,9 +1955,9 @@
             "description": "Библиотека для работы с инфоблоками, хайлоадами и т.п как сущностями",
             "support": {
                 "issues": "https://github.com/vsavritsky/bitrix-models/issues",
-                "source": "https://github.com/vsavritsky/bitrix-models/tree/0.0.24"
+                "source": "https://github.com/vsavritsky/bitrix-models/tree/0.0.26"
             },
-            "time": "2023-02-19T08:13:31+00:00"
+            "time": "2023-02-19T08:16:20+00:00"
         },
         {
             "name": "vsavritsky/bitrix-rest-api-cache",
