@@ -13,7 +13,7 @@
     "vanderlee/swaggergen": "^2.3.21",
     "swagger-api/swagger-ui": "^v3.52.5",
     "symfony/dotenv": "^v6.0.0",
-    "vsavritsky/bitrix-models": "^0.0.23",
+    "vsavritsky/bitrix-models": "^0.0.24",
     "vsavritsky/slim-oauth2-routes": "^v4.0.0",
     "vsavritsky/slim-oauth2-middleware": "^v4.0.0",
     "vsavritsky/slim-oauth2-http": "^v4.0.0",
