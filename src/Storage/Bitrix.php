@@ -38,6 +38,8 @@ class Bitrix extends Pdo
     protected function checkPassword($user, $password)
     {
         global $USER;
-        return $USER->Login($user['LOGIN'], $password);
+        $result = $USER->Login($user['LOGIN'], $password);
+            
+        return $result === true ? true : false;
     }
 }
