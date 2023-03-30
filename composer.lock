@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "236f1f6562b00e2197cc05c115db4d8a",
+    "content-hash": "f49b22ef4374179d8aa73e29a3c38b76",
     "packages": [
         {
             "name": "bshaffer/oauth2-server-php",
@@ -1397,16 +1397,16 @@
         },
         {
             "name": "symfony/deprecation-contracts",
-            "version": "v3.2.0",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "1ee04c65529dea5d8744774d474e7cbd2f1206d3"
+                "reference": "e2d1534420bd723d0ef5aec58a22c5fe60ce6f5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/1ee04c65529dea5d8744774d474e7cbd2f1206d3",
-                "reference": "1ee04c65529dea5d8744774d474e7cbd2f1206d3",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/e2d1534420bd723d0ef5aec58a22c5fe60ce6f5e",
+                "reference": "e2d1534420bd723d0ef5aec58a22c5fe60ce6f5e",
                 "shasum": ""
             },
             "require": {
@@ -1444,7 +1444,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.2.0"
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.2.1"
             },
             "funding": [
                 {
@@ -1460,20 +1460,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-25T10:21:52+00:00"
+            "time": "2023-03-01T10:25:55+00:00"
         },
         {
             "name": "symfony/dotenv",
-            "version": "v6.2.5",
+            "version": "v6.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dotenv.git",
-                "reference": "1a24cb3ab1dbb8834a75c9d46e427e84baae29bc"
+                "reference": "f2b09b7ee21458779df000bd24020b6e9955b393"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dotenv/zipball/1a24cb3ab1dbb8834a75c9d46e427e84baae29bc",
-                "reference": "1a24cb3ab1dbb8834a75c9d46e427e84baae29bc",
+                "url": "https://api.github.com/repos/symfony/dotenv/zipball/f2b09b7ee21458779df000bd24020b6e9955b393",
+                "reference": "f2b09b7ee21458779df000bd24020b6e9955b393",
                 "shasum": ""
             },
             "require": {
@@ -1518,7 +1518,7 @@
                 "environment"
             ],
             "support": {
-                "source": "https://github.com/symfony/dotenv/tree/v6.2.5"
+                "source": "https://github.com/symfony/dotenv/tree/v6.2.7"
             },
             "funding": [
                 {
@@ -1534,20 +1534,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-01T08:38:09+00:00"
+            "time": "2023-02-14T08:44:56+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v6.2.5",
+            "version": "v6.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "c90dc446976a612e3312a97a6ec0069ab0c2099c"
+                "reference": "20808dc6631aecafbe67c186af5dcb370be3a0eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/c90dc446976a612e3312a97a6ec0069ab0c2099c",
-                "reference": "c90dc446976a612e3312a97a6ec0069ab0c2099c",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/20808dc6631aecafbe67c186af5dcb370be3a0eb",
+                "reference": "20808dc6631aecafbe67c186af5dcb370be3a0eb",
                 "shasum": ""
             },
             "require": {
@@ -1582,7 +1582,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v6.2.5"
+                "source": "https://github.com/symfony/finder/tree/v6.2.7"
             },
             "funding": [
                 {
@@ -1598,7 +1598,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-20T17:45:48+00:00"
+            "time": "2023-02-16T09:57:23+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1767,16 +1767,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v6.2.5",
+            "version": "v6.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "2bbfbdacc8a15574f8440c4838ce0d7bb6c86b19"
+                "reference": "e8e6a1d59e050525f27a1f530aa9703423cb7f57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/2bbfbdacc8a15574f8440c4838ce0d7bb6c86b19",
-                "reference": "2bbfbdacc8a15574f8440c4838ce0d7bb6c86b19",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/e8e6a1d59e050525f27a1f530aa9703423cb7f57",
+                "reference": "e8e6a1d59e050525f27a1f530aa9703423cb7f57",
                 "shasum": ""
             },
             "require": {
@@ -1821,7 +1821,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v6.2.5"
+                "source": "https://github.com/symfony/yaml/tree/v6.2.7"
             },
             "funding": [
                 {
@@ -1837,7 +1837,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-10T18:53:53+00:00"
+            "time": "2023-02-16T09:57:23+00:00"
         },
         {
             "name": "vanderlee/swaggergen",
@@ -1994,16 +1994,16 @@
         },
         {
             "name": "vsavritsky/bitrix-rest-api-smart-filter",
-            "version": "0.0.5",
+            "version": "0.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter.git",
-                "reference": "b8dee6fea52ca358cde279e9aab3c15383a6805d"
+                "reference": "c6a7c672742e7d3a2b1797539c5076191a0a6a89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vsavritsky/bitrix-rest-api-smart-filter/zipball/b8dee6fea52ca358cde279e9aab3c15383a6805d",
-                "reference": "b8dee6fea52ca358cde279e9aab3c15383a6805d",
+                "url": "https://api.github.com/repos/vsavritsky/bitrix-rest-api-smart-filter/zipball/c6a7c672742e7d3a2b1797539c5076191a0a6a89",
+                "reference": "c6a7c672742e7d3a2b1797539c5076191a0a6a89",
                 "shasum": ""
             },
             "require": {
@@ -2020,9 +2020,9 @@
             "description": "Библиотека в виде обертки над смарт фильтром битрикса",
             "support": {
                 "issues": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter/issues",
-                "source": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter/tree/0.0.5"
+                "source": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter/tree/0.0.7"
             },
-            "time": "2023-01-20T19:57:55+00:00"
+            "time": "2023-03-30T18:32:40+00:00"
         },
         {
             "name": "vsavritsky/slim-oauth2-http",
@@ -2204,16 +2204,16 @@
         },
         {
             "name": "zircote/swagger-php",
-            "version": "4.6.2",
+            "version": "4.7.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zircote/swagger-php.git",
-                "reference": "14d6c5e2bde957e03a3a5496a3b18419a0480199"
+                "reference": "4a1d1272c2dd3afd8d96e92f02dc3565d5cc3c18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/14d6c5e2bde957e03a3a5496a3b18419a0480199",
-                "reference": "14d6c5e2bde957e03a3a5496a3b18419a0480199",
+                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/4a1d1272c2dd3afd8d96e92f02dc3565d5cc3c18",
+                "reference": "4a1d1272c2dd3afd8d96e92f02dc3565d5cc3c18",
                 "shasum": ""
             },
             "require": {
@@ -2276,9 +2276,9 @@
             ],
             "support": {
                 "issues": "https://github.com/zircote/swagger-php/issues",
-                "source": "https://github.com/zircote/swagger-php/tree/4.6.2"
+                "source": "https://github.com/zircote/swagger-php/tree/4.7.8"
             },
-            "time": "2023-02-14T22:54:06+00:00"
+            "time": "2023-03-19T21:25:02+00:00"
         }
     ],
     "packages-dev": [],
