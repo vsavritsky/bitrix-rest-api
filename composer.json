@@ -3,7 +3,7 @@
   "description": "Библиотека для создания REST API в битриксе",
   "type": "library",
   "require": {
-    "php": ">=8.0",
+    "php": ">=7.4",
     "slim/psr7": "^1.6",
     "slim/slim": "^4.11",
     "php-di/php-di": "^6.4",
