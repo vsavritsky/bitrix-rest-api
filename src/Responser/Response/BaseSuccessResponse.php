@@ -5,7 +5,7 @@ namespace BitrixRestApi\Responser\Response;
 class BaseSuccessResponse extends AbstractResponse implements \JsonSerializable
 {
     public int $code = 200;
-    public string|null $cacheId = null;
+    public string $cacheId = '';
 
     public array $cacheTags = [];
 

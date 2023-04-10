@@ -10,14 +10,14 @@ class ResponseFacade
 {
     protected \Slim\Psr7\Response $response;
 
-    protected array|AbstractResponse $dataResponse;
+    protected AbstractResponse $dataResponse;
 
     public function __construct(\Slim\Psr7\Response $response)
     {
         $this->response = $response;
     }
 
-    public function setContent(array|AbstractResponse $response = []): static
+    public function setContent($response = []): self
     {
         $this->dataResponse = $response;
 
