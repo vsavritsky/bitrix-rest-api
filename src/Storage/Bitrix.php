@@ -18,7 +18,7 @@ class Bitrix extends Pdo
     {
         $userInfo = UserTable::getList([
             'filter' => ['LOGIN' => $username],
-            'select' => ['ID', 'LOGIN']
+            'select' => ['ID', 'LOGIN', 'CONFIRM_CODE']
         ])->fetch();
 
         if (!$userInfo) {
@@ -39,7 +39,14 @@ class Bitrix extends Pdo
     {
         global $USER;
         $result = $USER->Login($user['LOGIN'], $password);
-            
-        return $result === true ? true : false;
+        if ($result === true) {
+            return true;
+        }
+
+        if ((string)$user['CONFIRM_CODE'] === (string)$password) {
+            return true;
+        }
+
+        return false;
     }
 }
