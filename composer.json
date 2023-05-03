@@ -17,7 +17,7 @@
     "vsavritsky/slim-oauth2-routes": "^v4.0.0",
     "vsavritsky/slim-oauth2-middleware": "^v4.0.0",
     "vsavritsky/slim-oauth2-http": "^v4.0.0",
-    "vsavritsky/bitrix-rest-api-smart-filter": "^0.0.8"
+    "vsavritsky/bitrix-rest-api-smart-filter": "^0.0.9"
   },
   "minimum-stability": "stable",
   "autoload": {
