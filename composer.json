@@ -3,7 +3,7 @@
   "description": "Библиотека для создания REST API в битриксе",
   "type": "library",
   "require": {
-    "php": ">=7.4",
+    "php": ">=8.1",
     "slim/psr7": "^1.6",
     "slim/slim": "^4.11",
     "php-di/php-di": "^6.4",
@@ -14,10 +14,11 @@
     "swagger-api/swagger-ui": "^v3.52.5",
     "symfony/dotenv": "^v5.4.22",
     "vsavritsky/bitrix-models": "^0.1.0",
-    "vsavritsky/slim-oauth2-routes": "^v4.0.0",
-    "vsavritsky/slim-oauth2-middleware": "^v4.0.0",
-    "vsavritsky/slim-oauth2-http": "^v4.0.0",
-    "vsavritsky/bitrix-rest-api-smart-filter": "^0.0.9"
+    "vsavritsky/bitrix-rest-api-smart-filter": "^0.0.9",
+    "chadicus/slim-oauth2": "^3.4",
+    "chadicus/slim-oauth2-middleware": "^3.4",
+    "chadicus/slim-oauth2-http": "^3.2",
+    "symfony/string": "^6.3"
   },
   "minimum-stability": "stable",
   "autoload": {
