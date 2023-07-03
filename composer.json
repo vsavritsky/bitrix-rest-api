@@ -17,7 +17,8 @@
     "vsavritsky/bitrix-rest-api-smart-filter": "^0.0.11",
     "chadicus/slim-oauth2": "^3.4",
     "chadicus/slim-oauth2-http": "^3.2",
-    "symfony/string": "^6.3"
+    "symfony/string": "^6.3",
+    "vsavritsky/slim-oauth2-middleware": "^4.0"
   },
   "minimum-stability": "stable",
   "autoload": {
