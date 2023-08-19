@@ -81,7 +81,7 @@ class AuthorizationMiddleware implements MiddlewareInterface
      *
      * @param array $scopes Scopes require for authorization.
      *
-     * @return AuthorizationMiddleware
+     * @return Authorization
      */
     public function withRequiredScope(array $scopes)
     {

@@ -24,7 +24,7 @@ class CacheMiddleware
             } else {
                 $response = new \Slim\Psr7\Response();
                 $body = $response->getBody();
-                $body->write(json_encode($result));
+                $body->write(json_encode($result, JSON_HEX_QUOT | JSON_HEX_TAG));
                 $response->withBody($body);
             }
         }
