@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace BitrixRestApi\Handler;
 
-use App\Application\ResponseEmitter\ResponseEmitter;
+use BitrixRestApi\ResponseEmitter\ResponseEmitter;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\HttpInternalServerErrorException;
 class ShutdownHandler
