@@ -14,11 +14,12 @@ class ResponseEmitter extends SlimResponseEmitter
      */
     public function emit(ResponseInterface $response): void
     {
+        $protocol = $_SERVER['PROTOCOL'] = !empty($_SERVER['HTTPS']) ? 'https' : 'http';
         $origin = $_SERVER['HTTP_HOST'];
 
         $response = $response
             ->withHeader('Access-Control-Allow-Credentials', 'true')
-            ->withHeader('Access-Control-Allow-Origin', $origin)
+            ->withHeader('Access-Control-Allow-Origin', sprintf('%s://%s', $protocol, $origin))
             ->withHeader(
                 'Access-Control-Allow-Headers',
                 'X-Requested-With, Content-Type, Accept, Origin, Authorization',
