@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6be67a488ded2d1e91abb764b0808d53",
+    "content-hash": "bd8805b26cbb9eda7257254f1e78f0af",
     "packages": [
         {
             "name": "bshaffer/oauth2-server-php",
@@ -770,16 +770,16 @@
         },
         {
             "name": "php-di/invoker",
-            "version": "2.3.3",
+            "version": "2.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-DI/Invoker.git",
-                "reference": "cd6d9f267d1a3474bdddf1be1da079f01b942786"
+                "reference": "33234b32dafa8eb69202f950a1fc92055ed76a86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-DI/Invoker/zipball/cd6d9f267d1a3474bdddf1be1da079f01b942786",
-                "reference": "cd6d9f267d1a3474bdddf1be1da079f01b942786",
+                "url": "https://api.github.com/repos/PHP-DI/Invoker/zipball/33234b32dafa8eb69202f950a1fc92055ed76a86",
+                "reference": "33234b32dafa8eb69202f950a1fc92055ed76a86",
                 "shasum": ""
             },
             "require": {
@@ -813,7 +813,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-DI/Invoker/issues",
-                "source": "https://github.com/PHP-DI/Invoker/tree/2.3.3"
+                "source": "https://github.com/PHP-DI/Invoker/tree/2.3.4"
             },
             "funding": [
                 {
@@ -821,7 +821,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-13T09:22:56+00:00"
+            "time": "2023-09-08T09:24:21+00:00"
         },
         {
             "name": "php-di/php-di",
@@ -2540,16 +2540,16 @@
         },
         {
             "name": "vsavritsky/bitrix-models",
-            "version": "0.1.4",
+            "version": "0.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vsavritsky/bitrix-models.git",
-                "reference": "e4c2e200989e343bbf1d064483a107fb64956a69"
+                "reference": "935bd29fec6b06fdd6ab0ed0695364b91de8645e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vsavritsky/bitrix-models/zipball/e4c2e200989e343bbf1d064483a107fb64956a69",
-                "reference": "e4c2e200989e343bbf1d064483a107fb64956a69",
+                "url": "https://api.github.com/repos/vsavritsky/bitrix-models/zipball/935bd29fec6b06fdd6ab0ed0695364b91de8645e",
+                "reference": "935bd29fec6b06fdd6ab0ed0695364b91de8645e",
                 "shasum": ""
             },
             "require": {
@@ -2566,9 +2566,9 @@
             "description": "Библиотека для работы с инфоблоками, хайлоадами и т.п как сущностями",
             "support": {
                 "issues": "https://github.com/vsavritsky/bitrix-models/issues",
-                "source": "https://github.com/vsavritsky/bitrix-models/tree/0.1.4"
+                "source": "https://github.com/vsavritsky/bitrix-models/tree/0.1.5"
             },
-            "time": "2023-09-05T09:08:15+00:00"
+            "time": "2023-09-18T18:09:48+00:00"
         },
         {
             "name": "vsavritsky/bitrix-rest-api-cache",
@@ -2605,22 +2605,22 @@
         },
         {
             "name": "vsavritsky/bitrix-rest-api-smart-filter",
-            "version": "0.0.17",
+            "version": "0.0.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter.git",
-                "reference": "9772c9af39640fb36734b0eca4273af0fd9a18de"
+                "reference": "6dca9ff6e4825217521d4635f4610396b6b8a055"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vsavritsky/bitrix-rest-api-smart-filter/zipball/9772c9af39640fb36734b0eca4273af0fd9a18de",
-                "reference": "9772c9af39640fb36734b0eca4273af0fd9a18de",
+                "url": "https://api.github.com/repos/vsavritsky/bitrix-rest-api-smart-filter/zipball/6dca9ff6e4825217521d4635f4610396b6b8a055",
+                "reference": "6dca9ff6e4825217521d4635f4610396b6b8a055",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.4",
                 "vsavritsky/bitrix-filter-builder": "^0.0.3",
-                "vsavritsky/bitrix-models": "^0.1.4"
+                "vsavritsky/bitrix-models": "*"
             },
             "type": "library",
             "autoload": {
@@ -2632,9 +2632,9 @@
             "description": "Библиотека в виде обертки над смарт фильтром битрикса",
             "support": {
                 "issues": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter/issues",
-                "source": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter/tree/0.0.17"
+                "source": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter/tree/0.0.19"
             },
-            "time": "2023-09-05T16:11:45+00:00"
+            "time": "2023-09-18T18:13:30+00:00"
         },
         {
             "name": "vsavritsky/slim-oauth2-http",
@@ -2758,16 +2758,16 @@
         },
         {
             "name": "zircote/swagger-php",
-            "version": "4.7.13",
+            "version": "4.7.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zircote/swagger-php.git",
-                "reference": "e1062da5b47d3a97ee9910301f902b0f5b408340"
+                "reference": "e53c0c7a6e250c435cc13ab50792247a8eb07da3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/e1062da5b47d3a97ee9910301f902b0f5b408340",
-                "reference": "e1062da5b47d3a97ee9910301f902b0f5b408340",
+                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/e53c0c7a6e250c435cc13ab50792247a8eb07da3",
+                "reference": "e53c0c7a6e250c435cc13ab50792247a8eb07da3",
                 "shasum": ""
             },
             "require": {
@@ -2830,9 +2830,9 @@
             ],
             "support": {
                 "issues": "https://github.com/zircote/swagger-php/issues",
-                "source": "https://github.com/zircote/swagger-php/tree/4.7.13"
+                "source": "https://github.com/zircote/swagger-php/tree/4.7.14"
             },
-            "time": "2023-08-30T23:32:39+00:00"
+            "time": "2023-09-12T00:18:13+00:00"
         }
     ],
     "packages-dev": [],

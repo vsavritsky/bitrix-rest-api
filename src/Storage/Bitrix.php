@@ -17,7 +17,7 @@ class Bitrix extends Pdo
     public function getUser($username)
     {
         $userInfo = UserTable::getList([
-            'filter' => ['LOGIN' => $username],
+            'filter' => ['LOGIN' => $username, '!BLOCKED' => 'Y'],
             'select' => ['ID', 'LOGIN', 'CONFIRM_CODE']
         ])->fetch();
 
@@ -32,7 +32,7 @@ class Bitrix extends Pdo
 
     public function setUser($username, $password, $firstName = null, $lastName = null)
     {
-        
+
     }
 
     protected function checkPassword($user, $password)
