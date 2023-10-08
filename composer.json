@@ -6,7 +6,7 @@
     "php": ">=8.1",
     "slim/psr7": "^1.6",
     "slim/slim": "^4.11",
-    "php-di/php-di": "^6.4",
+    "php-di/php-di": "^7.0.5",
     "vsavritsky/bitrix-rest-api-cache": "^0.1.3",
     "vsavritsky/bitrix-filter-builder": "^0.0.3",
     "zircote/swagger-php": "^4.3.0",
@@ -18,7 +18,9 @@
     "chadicus/slim-oauth2": "^3.4",
     "chadicus/slim-oauth2-http": "^3.2",
     "symfony/string": "^6.3",
-    "vsavritsky/slim-oauth2-middleware": "^4.0"
+    "vsavritsky/slim-oauth2-middleware": "^4.0",
+    "thisi69/console-jedi": "^1.3",
+    "symfony/lock": "^6.3"
   },
   "minimum-stability": "stable",
   "autoload": {
