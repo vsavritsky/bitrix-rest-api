@@ -6,6 +6,7 @@ namespace BitrixRestApi\ResponseEmitter;
 
 use Psr\Http\Message\ResponseInterface;
 use Slim\ResponseEmitter as SlimResponseEmitter;
+use Bitrix\Main\Config\Option;
 
 class ResponseEmitter extends SlimResponseEmitter
 {
@@ -17,9 +18,11 @@ class ResponseEmitter extends SlimResponseEmitter
         $protocol = $_SERVER['PROTOCOL'] = !empty($_SERVER['HTTPS']) ? 'https' : 'http';
         $origin = $_SERVER['HTTP_HOST'];
 
+        $accessControlAllowOrigin = Option::get('site.settings', 'rest.access-control-allow-origin', sprintf('%s://%s', $protocol, $origin));
+
         $response = $response
             ->withHeader('Access-Control-Allow-Credentials', 'true')
-            ->withHeader('Access-Control-Allow-Origin', sprintf('%s://%s', $protocol, $origin))
+            ->withHeader('Access-Control-Allow-Origin', $accessControlAllowOrigin)
             ->withHeader(
                 'Access-Control-Allow-Headers',
                 'X-Requested-With, Content-Type, Accept, Origin, Authorization',

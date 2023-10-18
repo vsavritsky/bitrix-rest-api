@@ -10,7 +10,7 @@ class ResponseFacade
 {
     protected \Slim\Psr7\Response $response;
 
-    protected AbstractResponse $dataResponse;
+    protected AbstractResponse | array $dataResponse;
 
     public function __construct(\Slim\Psr7\Response $response)
     {
@@ -21,10 +21,6 @@ class ResponseFacade
     {
         $this->dataResponse = $response;
 
-        if (is_a($response, AbstractResponse::class)) {
-            $data = $response->jsonSerialize();
-        }
-
         $this->response
             ->getBody()
             ->write(json_encode($response));
@@ -34,7 +30,6 @@ class ResponseFacade
 
     public function getResponse(): ResponseInterface
     {
-        $code = 200;
         if (is_array($this->dataResponse) && $this->dataResponse['status']) {
             return $this->response->withStatus($this->dataResponse['status']);
         }

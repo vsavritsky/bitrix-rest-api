@@ -2855,16 +2855,16 @@
         },
         {
             "name": "vsavritsky/bitrix-models",
-            "version": "0.1.7",
+            "version": "0.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vsavritsky/bitrix-models.git",
-                "reference": "87ae23bfe0b963b5c716b501948765fd33f9e449"
+                "reference": "2ec28c26b36c3ba952e049881a6d167f25cba1b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vsavritsky/bitrix-models/zipball/87ae23bfe0b963b5c716b501948765fd33f9e449",
-                "reference": "87ae23bfe0b963b5c716b501948765fd33f9e449",
+                "url": "https://api.github.com/repos/vsavritsky/bitrix-models/zipball/2ec28c26b36c3ba952e049881a6d167f25cba1b9",
+                "reference": "2ec28c26b36c3ba952e049881a6d167f25cba1b9",
                 "shasum": ""
             },
             "require": {
@@ -2882,9 +2882,9 @@
             "description": "Библиотека для работы с инфоблоками, хайлоадами и т.п как сущностями",
             "support": {
                 "issues": "https://github.com/vsavritsky/bitrix-models/issues",
-                "source": "https://github.com/vsavritsky/bitrix-models/tree/0.1.7"
+                "source": "https://github.com/vsavritsky/bitrix-models/tree/0.1.8"
             },
-            "time": "2023-10-01T13:19:08+00:00"
+            "time": "2023-10-18T18:59:33+00:00"
         },
         {
             "name": "vsavritsky/bitrix-rest-api-cache",
@@ -3074,16 +3074,16 @@
         },
         {
             "name": "zircote/swagger-php",
-            "version": "4.7.14",
+            "version": "4.7.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zircote/swagger-php.git",
-                "reference": "e53c0c7a6e250c435cc13ab50792247a8eb07da3"
+                "reference": "df8de8e484003f68cd2fa68db1e6cfb47a3a92cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/e53c0c7a6e250c435cc13ab50792247a8eb07da3",
-                "reference": "e53c0c7a6e250c435cc13ab50792247a8eb07da3",
+                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/df8de8e484003f68cd2fa68db1e6cfb47a3a92cb",
+                "reference": "df8de8e484003f68cd2fa68db1e6cfb47a3a92cb",
                 "shasum": ""
             },
             "require": {
@@ -3146,9 +3146,9 @@
             ],
             "support": {
                 "issues": "https://github.com/zircote/swagger-php/issues",
-                "source": "https://github.com/zircote/swagger-php/tree/4.7.14"
+                "source": "https://github.com/zircote/swagger-php/tree/4.7.15"
             },
-            "time": "2023-09-12T00:18:13+00:00"
+            "time": "2023-10-12T20:26:34+00:00"
         }
     ],
     "packages-dev": [],

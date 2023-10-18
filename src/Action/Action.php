@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace BitrixRestApi\Action;
 
-use App\Domain\DomainException\DomainRecordNotFoundException;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Log\LoggerInterface;
@@ -38,13 +37,13 @@ abstract class Action
 
         try {
             return $this->action();
-        } catch (DomainRecordNotFoundException $e) {
+        } catch (\ErrorException $e) {
             throw new HttpNotFoundException($this->request, $e->getMessage());
         }
     }
 
     /**
-     * @throws DomainRecordNotFoundException
+     * @throws \ErrorException
      * @throws HttpBadRequestException
      */
     abstract protected function action(): Response;
