@@ -15,7 +15,7 @@ class ResponseEmitter extends SlimResponseEmitter
      */
     public function emit(ResponseInterface $response): void
     {
-        $protocol = $_SERVER['PROTOCOL'] = !empty($_SERVER['HTTPS']) ? 'https' : 'http';
+        $protocol = $_SERVER['PROTOCOL'] = (!empty($_SERVER['HTTPS']) || $_SERVER["SERVER_PORT"] == 443) ? 'https' : 'http';
         $origin = $_SERVER['HTTP_HOST'];
 
         $accessControlAllowOrigin = Option::get('site.settings', 'rest.access-control-allow-origin', sprintf('%s://%s', $protocol, $origin));
