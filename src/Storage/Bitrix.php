@@ -14,12 +14,26 @@ class Bitrix extends Pdo
         parent::__construct($connection, $config);
     }
 
-    public function getUser($username)
+    public function getUser($username): array | false
     {
         $userInfo = UserTable::getList([
             'filter' => ['LOGIN' => $username, '!BLOCKED' => 'Y'],
             'select' => ['ID', 'LOGIN', 'CONFIRM_CODE']
         ])->fetch();
+
+        if (!$userInfo) {
+            $userInfo = UserTable::getList([
+                'filter' => ['PERSONAL_PHONE' => $username, '!BLOCKED' => 'Y'],
+                'select' => ['ID', 'LOGIN', 'CONFIRM_CODE']
+            ])->fetch();
+        }
+
+        if (!$userInfo) {
+            $userInfo = UserTable::getList([
+                'filter' => ['EMAIL' => $username, '!BLOCKED' => 'Y'],
+                'select' => ['ID', 'LOGIN', 'CONFIRM_CODE']
+            ])->fetch();
+        }
 
         if (!$userInfo) {
             return false;
