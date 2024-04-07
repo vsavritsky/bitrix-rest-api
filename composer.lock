@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0efa642d1556300272a45a777611b5a7",
+    "content-hash": "d7ae3052571d4945a21b1785160e1652",
     "packages": [
         {
             "name": "bshaffer/oauth2-server-php",
@@ -2610,16 +2610,16 @@
         },
         {
             "name": "vsavritsky/bitrix-filter-builder",
-            "version": "0.0.4",
+            "version": "0.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vsavritsky/bitrix-filter-builder.git",
-                "reference": "e4924ba41c8e0e872ba91558263cbe65940bab4a"
+                "reference": "1c9afbc5f09a4ab5f95567a272f83830bc839f96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vsavritsky/bitrix-filter-builder/zipball/e4924ba41c8e0e872ba91558263cbe65940bab4a",
-                "reference": "e4924ba41c8e0e872ba91558263cbe65940bab4a",
+                "url": "https://api.github.com/repos/vsavritsky/bitrix-filter-builder/zipball/1c9afbc5f09a4ab5f95567a272f83830bc839f96",
+                "reference": "1c9afbc5f09a4ab5f95567a272f83830bc839f96",
                 "shasum": ""
             },
             "require": {
@@ -2636,29 +2636,29 @@
             "description": "Библиотека для простого создания фильтра",
             "support": {
                 "issues": "https://github.com/vsavritsky/bitrix-filter-builder/issues",
-                "source": "https://github.com/vsavritsky/bitrix-filter-builder/tree/0.0.4"
+                "source": "https://github.com/vsavritsky/bitrix-filter-builder/tree/0.0.5"
             },
-            "time": "2024-04-07T16:07:40+00:00"
+            "time": "2024-04-07T21:11:48+00:00"
         },
         {
             "name": "vsavritsky/bitrix-models",
-            "version": "0.1.12",
+            "version": "0.1.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vsavritsky/bitrix-models.git",
-                "reference": "b03ec42f9dbd418abf0ef9aa2cc93fad15e16444"
+                "reference": "ff11ac2ea77190d7c61d73cc18b9b66841c46df9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vsavritsky/bitrix-models/zipball/b03ec42f9dbd418abf0ef9aa2cc93fad15e16444",
-                "reference": "b03ec42f9dbd418abf0ef9aa2cc93fad15e16444",
+                "url": "https://api.github.com/repos/vsavritsky/bitrix-models/zipball/ff11ac2ea77190d7c61d73cc18b9b66841c46df9",
+                "reference": "ff11ac2ea77190d7c61d73cc18b9b66841c46df9",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
                 "php": ">=7.4",
-                "vsavritsky/bitrix-filter-builder": "^0.0.4"
+                "vsavritsky/bitrix-filter-builder": "*"
             },
             "type": "library",
             "autoload": {
@@ -2670,9 +2670,9 @@
             "description": "Библиотека для работы с инфоблоками, хайлоадами и т.п как сущностями",
             "support": {
                 "issues": "https://github.com/vsavritsky/bitrix-models/issues",
-                "source": "https://github.com/vsavritsky/bitrix-models/tree/0.1.12"
+                "source": "https://github.com/vsavritsky/bitrix-models/tree/0.1.13"
             },
-            "time": "2024-04-07T17:27:21+00:00"
+            "time": "2024-04-07T21:12:41+00:00"
         },
         {
             "name": "vsavritsky/bitrix-rest-api-cache",
