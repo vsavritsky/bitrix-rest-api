@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d7ae3052571d4945a21b1785160e1652",
+    "content-hash": "1e0d71a8432c5606f38a080e981ccf14",
     "packages": [
         {
             "name": "bshaffer/oauth2-server-php",
@@ -2705,22 +2705,22 @@
         },
         {
             "name": "vsavritsky/bitrix-models",
-            "version": "0.1.14",
+            "version": "0.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vsavritsky/bitrix-models.git",
-                "reference": "4ffadce3038e401add30155f194eb82bb56178b7"
+                "reference": "893a95f71d3b32841026896705bdaaea3b0fc2b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vsavritsky/bitrix-models/zipball/4ffadce3038e401add30155f194eb82bb56178b7",
-                "reference": "4ffadce3038e401add30155f194eb82bb56178b7",
+                "url": "https://api.github.com/repos/vsavritsky/bitrix-models/zipball/893a95f71d3b32841026896705bdaaea3b0fc2b5",
+                "reference": "893a95f71d3b32841026896705bdaaea3b0fc2b5",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
-                "php": ">=7.4",
+                "php": ">=8.0",
                 "vsavritsky/bitrix-filter-builder": "*"
             },
             "type": "library",
@@ -2733,9 +2733,9 @@
             "description": "Библиотека для работы с инфоблоками, хайлоадами и т.п как сущностями",
             "support": {
                 "issues": "https://github.com/vsavritsky/bitrix-models/issues",
-                "source": "https://github.com/vsavritsky/bitrix-models/tree/0.1.14"
+                "source": "https://github.com/vsavritsky/bitrix-models/tree/0.1.16"
             },
-            "time": "2024-05-07T05:21:54+00:00"
+            "time": "2024-05-07T17:27:57+00:00"
         },
         {
             "name": "vsavritsky/bitrix-rest-api-cache",
