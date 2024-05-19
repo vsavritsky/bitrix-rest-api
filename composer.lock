@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e9fbb6e295b1bea5b7d245257ef3eec0",
+    "content-hash": "dfa139ccc45f4a20ca12ea915d841fc2",
     "packages": [
         {
             "name": "bshaffer/oauth2-server-php",
@@ -2772,16 +2772,16 @@
         },
         {
             "name": "vsavritsky/bitrix-rest-api-smart-filter",
-            "version": "0.0.22",
+            "version": "0.0.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter.git",
-                "reference": "c801f6f0d4e00e06943668e585cb772c2b0cf004"
+                "reference": "1534c626d1a9fdaebd24b980b3194045a8b49e10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vsavritsky/bitrix-rest-api-smart-filter/zipball/c801f6f0d4e00e06943668e585cb772c2b0cf004",
-                "reference": "c801f6f0d4e00e06943668e585cb772c2b0cf004",
+                "url": "https://api.github.com/repos/vsavritsky/bitrix-rest-api-smart-filter/zipball/1534c626d1a9fdaebd24b980b3194045a8b49e10",
+                "reference": "1534c626d1a9fdaebd24b980b3194045a8b49e10",
                 "shasum": ""
             },
             "require": {
@@ -2799,9 +2799,9 @@
             "description": "Библиотека в виде обертки над смарт фильтром битрикса",
             "support": {
                 "issues": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter/issues",
-                "source": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter/tree/0.0.22"
+                "source": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter/tree/0.0.23"
             },
-            "time": "2024-05-15T19:46:38+00:00"
+            "time": "2024-05-19T07:39:22+00:00"
         },
         {
             "name": "vsavritsky/slim-oauth2-http",
