@@ -8,7 +8,7 @@
     "slim/slim": "^4.13",
     "php-di/php-di": "^7.0.6",
     "vsavritsky/bitrix-rest-api-cache": "^0.1.4",
-    "vsavritsky/bitrix-filter-builder": "^0.0.5",
+    "vsavritsky/bitrix-filter-builder": "^0.0.6",
     "zircote/swagger-php": "^4.8.7",
     "vanderlee/swaggergen": "^2.3.21",
     "swagger-api/swagger-ui": "^v3.52.5",
