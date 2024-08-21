@@ -17,20 +17,20 @@ class Bitrix extends Pdo
     public function getUser($username): array | false
     {
         $userInfo = UserTable::getList([
-            'filter' => ['LOGIN' => $username, '!BLOCKED' => 'Y'],
+            'filter' => ['=LOGIN' => $username, '!BLOCKED' => 'Y'],
             'select' => ['ID', 'LOGIN', 'CONFIRM_CODE']
         ])->fetch();
 
         if (!$userInfo) {
             $userInfo = UserTable::getList([
-                'filter' => ['PERSONAL_PHONE' => $username, '!BLOCKED' => 'Y'],
+                'filter' => ['=PERSONAL_PHONE' => $username, '!BLOCKED' => 'Y'],
                 'select' => ['ID', 'LOGIN', 'CONFIRM_CODE']
             ])->fetch();
         }
 
         if (!$userInfo) {
             $userInfo = UserTable::getList([
-                'filter' => ['EMAIL' => $username, '!BLOCKED' => 'Y'],
+                'filter' => ['=EMAIL' => $username, '!BLOCKED' => 'Y'],
                 'select' => ['ID', 'LOGIN', 'CONFIRM_CODE']
             ])->fetch();
         }
