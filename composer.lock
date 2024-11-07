@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65abc22a1d9e07d3fbfa884e4a4e4bcc",
+    "content-hash": "ff85704a79b6cbc04a1713be32087634",
     "packages": [
         {
             "name": "bshaffer/oauth2-server-php",
@@ -1436,16 +1436,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v6.4.13",
+            "version": "v6.4.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "f793dd5a7d9ae9923e35d0503d08ba734cec1d79"
+                "reference": "897c2441ed4eec8a8a2c37b943427d24dba3f26b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/f793dd5a7d9ae9923e35d0503d08ba734cec1d79",
-                "reference": "f793dd5a7d9ae9923e35d0503d08ba734cec1d79",
+                "url": "https://api.github.com/repos/symfony/console/zipball/897c2441ed4eec8a8a2c37b943427d24dba3f26b",
+                "reference": "897c2441ed4eec8a8a2c37b943427d24dba3f26b",
                 "shasum": ""
             },
             "require": {
@@ -1510,7 +1510,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v6.4.13"
+                "source": "https://github.com/symfony/console/tree/v6.4.14"
             },
             "funding": [
                 {
@@ -1526,7 +1526,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-10-09T08:40:40+00:00"
+            "time": "2024-11-05T15:34:40+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -2715,16 +2715,16 @@
         },
         {
             "name": "vsavritsky/bitrix-rest-api-smart-filter",
-            "version": "0.0.27",
+            "version": "0.0.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter.git",
-                "reference": "4fece4021ec29378729615b4c66331eca3aeb5a6"
+                "reference": "b069a6f3da473b63e2ae3ccf4e3b24a7d6f60735"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vsavritsky/bitrix-rest-api-smart-filter/zipball/4fece4021ec29378729615b4c66331eca3aeb5a6",
-                "reference": "4fece4021ec29378729615b4c66331eca3aeb5a6",
+                "url": "https://api.github.com/repos/vsavritsky/bitrix-rest-api-smart-filter/zipball/b069a6f3da473b63e2ae3ccf4e3b24a7d6f60735",
+                "reference": "b069a6f3da473b63e2ae3ccf4e3b24a7d6f60735",
                 "shasum": ""
             },
             "require": {
@@ -2742,9 +2742,9 @@
             "description": "Библиотека в виде обертки над смарт фильтром битрикса",
             "support": {
                 "issues": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter/issues",
-                "source": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter/tree/0.0.27"
+                "source": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter/tree/0.0.28"
             },
-            "time": "2024-10-28T17:39:21+00:00"
+            "time": "2024-11-07T17:26:09+00:00"
         },
         {
             "name": "vsavritsky/slim-oauth2-http",
