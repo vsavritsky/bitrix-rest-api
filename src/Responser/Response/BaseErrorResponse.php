@@ -54,6 +54,13 @@ class BaseErrorResponse extends AbstractResponse implements \JsonSerializable
         }
     }
 
+    public function setErrorCode(string $errorCode): BaseErrorResponse
+    {
+        $this->errorCode = $errorCode;
+
+        return $this;
+    }
+
     public function jsonSerialize()
     {
         return [
