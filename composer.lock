@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "190d61c4c9e08dbd464219dfebba831d",
+    "content-hash": "778302c1a70c2b65417d1b0cf9b5a1c9",
     "packages": [
         {
             "name": "bshaffer/oauth2-server-php",
-            "version": "v1.14.1",
+            "version": "v1.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bshaffer/oauth2-server-php.git",
-                "reference": "096db2c86a7d67a2ba45e72be7d208c342694542"
+                "reference": "1c715c2d2f71254d1c683b8c89a0f16b61ccd0d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bshaffer/oauth2-server-php/zipball/096db2c86a7d67a2ba45e72be7d208c342694542",
-                "reference": "096db2c86a7d67a2ba45e72be7d208c342694542",
+                "url": "https://api.github.com/repos/bshaffer/oauth2-server-php/zipball/1c715c2d2f71254d1c683b8c89a0f16b61ccd0d6",
+                "reference": "1c715c2d2f71254d1c683b8c89a0f16b61ccd0d6",
                 "shasum": ""
             },
             "require": {
@@ -64,9 +64,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bshaffer/oauth2-server-php/issues",
-                "source": "https://github.com/bshaffer/oauth2-server-php/tree/v1.14.1"
+                "source": "https://github.com/bshaffer/oauth2-server-php/tree/v1.14.2"
             },
-            "time": "2023-07-07T17:53:54+00:00"
+            "time": "2025-03-28T21:13:45+00:00"
         },
         {
             "name": "chadicus/psr-middleware",
@@ -503,16 +503,16 @@
         },
         {
             "name": "laravel/serializable-closure",
-            "version": "v2.0.3",
+            "version": "v2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/serializable-closure.git",
-                "reference": "f379c13663245f7aa4512a7869f62eb14095f23f"
+                "reference": "b352cf0534aa1ae6b4d825d1e762e35d43f8a841"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/f379c13663245f7aa4512a7869f62eb14095f23f",
-                "reference": "f379c13663245f7aa4512a7869f62eb14095f23f",
+                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/b352cf0534aa1ae6b4d825d1e762e35d43f8a841",
+                "reference": "b352cf0534aa1ae6b4d825d1e762e35d43f8a841",
                 "shasum": ""
             },
             "require": {
@@ -560,7 +560,7 @@
                 "issues": "https://github.com/laravel/serializable-closure/issues",
                 "source": "https://github.com/laravel/serializable-closure"
             },
-            "time": "2025-02-11T15:03:05+00:00"
+            "time": "2025-03-19T13:51:03+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -1433,16 +1433,16 @@
         },
         {
             "name": "swagger-api/swagger-ui",
-            "version": "v5.20.1",
+            "version": "v5.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swagger-api/swagger-ui.git",
-                "reference": "e3043f9380a62022e7249890ea918096578c4d78"
+                "reference": "fceaec605072fbc717a04895bd19814d9a1c8e6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/e3043f9380a62022e7249890ea918096578c4d78",
-                "reference": "e3043f9380a62022e7249890ea918096578c4d78",
+                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/fceaec605072fbc717a04895bd19814d9a1c8e6d",
+                "reference": "fceaec605072fbc717a04895bd19814d9a1c8e6d",
                 "shasum": ""
             },
             "type": "library",
@@ -1488,22 +1488,22 @@
             ],
             "support": {
                 "issues": "https://github.com/swagger-api/swagger-ui/issues",
-                "source": "https://github.com/swagger-api/swagger-ui/tree/v5.20.1"
+                "source": "https://github.com/swagger-api/swagger-ui/tree/v5.21.0"
             },
-            "time": "2025-03-10T10:57:35+00:00"
+            "time": "2025-04-13T19:37:38+00:00"
         },
         {
             "name": "symfony/console",
-            "version": "v6.4.17",
+            "version": "v6.4.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "799445db3f15768ecc382ac5699e6da0520a0a04"
+                "reference": "2e4af9c952617cc3f9559ff706aee420a8464c36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/799445db3f15768ecc382ac5699e6da0520a0a04",
-                "reference": "799445db3f15768ecc382ac5699e6da0520a0a04",
+                "url": "https://api.github.com/repos/symfony/console/zipball/2e4af9c952617cc3f9559ff706aee420a8464c36",
+                "reference": "2e4af9c952617cc3f9559ff706aee420a8464c36",
                 "shasum": ""
             },
             "require": {
@@ -1568,7 +1568,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v6.4.17"
+                "source": "https://github.com/symfony/console/tree/v6.4.20"
             },
             "funding": [
                 {
@@ -1584,7 +1584,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-07T12:07:30+00:00"
+            "time": "2025-03-03T17:16:38+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -1859,16 +1859,16 @@
         },
         {
             "name": "symfony/lock",
-            "version": "v7.2.4",
+            "version": "v7.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/lock.git",
-                "reference": "e1dae80a71c6f042420d687d3d8109781b643351"
+                "reference": "0436a01a5532c613d50cf56a50bc1756522c825e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/lock/zipball/e1dae80a71c6f042420d687d3d8109781b643351",
-                "reference": "e1dae80a71c6f042420d687d3d8109781b643351",
+                "url": "https://api.github.com/repos/symfony/lock/zipball/0436a01a5532c613d50cf56a50bc1756522c825e",
+                "reference": "0436a01a5532c613d50cf56a50bc1756522c825e",
                 "shasum": ""
             },
             "require": {
@@ -1917,7 +1917,7 @@
                 "semaphore"
             ],
             "support": {
-                "source": "https://github.com/symfony/lock/tree/v7.2.4"
+                "source": "https://github.com/symfony/lock/tree/v7.2.5"
             },
             "funding": [
                 {
@@ -1933,7 +1933,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-02-04T10:24:28+00:00"
+            "time": "2025-03-25T15:54:33+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2504,16 +2504,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v7.2.3",
+            "version": "v7.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "ac238f173df0c9c1120f862d0f599e17535a87ec"
+                "reference": "4c4b6f4cfcd7e52053f0c8bfad0f7f30fb924912"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/ac238f173df0c9c1120f862d0f599e17535a87ec",
-                "reference": "ac238f173df0c9c1120f862d0f599e17535a87ec",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/4c4b6f4cfcd7e52053f0c8bfad0f7f30fb924912",
+                "reference": "4c4b6f4cfcd7e52053f0c8bfad0f7f30fb924912",
                 "shasum": ""
             },
             "require": {
@@ -2556,7 +2556,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v7.2.3"
+                "source": "https://github.com/symfony/yaml/tree/v7.2.5"
             },
             "funding": [
                 {
@@ -2572,7 +2572,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-01-07T12:55:42+00:00"
+            "time": "2025-03-03T07:12:39+00:00"
         },
         {
             "name": "thisi69/console-jedi",
@@ -2776,16 +2776,16 @@
         },
         {
             "name": "vsavritsky/bitrix-rest-api-smart-filter",
-            "version": "0.0.31",
+            "version": "0.0.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter.git",
-                "reference": "17f10657ab2adc8fc3bc19c515ac952908481f5d"
+                "reference": "96369e777909fe644ea9fdfd4489c0ffbe899701"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vsavritsky/bitrix-rest-api-smart-filter/zipball/17f10657ab2adc8fc3bc19c515ac952908481f5d",
-                "reference": "17f10657ab2adc8fc3bc19c515ac952908481f5d",
+                "url": "https://api.github.com/repos/vsavritsky/bitrix-rest-api-smart-filter/zipball/96369e777909fe644ea9fdfd4489c0ffbe899701",
+                "reference": "96369e777909fe644ea9fdfd4489c0ffbe899701",
                 "shasum": ""
             },
             "require": {
@@ -2803,9 +2803,9 @@
             "description": "Библиотека в виде обертки над смарт фильтром битрикса",
             "support": {
                 "issues": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter/issues",
-                "source": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter/tree/0.0.31"
+                "source": "https://github.com/vsavritsky/bitrix-rest-api-smart-filter/tree/0.0.32"
             },
-            "time": "2024-12-23T22:00:38+00:00"
+            "time": "2025-04-16T06:43:41+00:00"
         },
         {
             "name": "vsavritsky/slim-oauth2-http",
