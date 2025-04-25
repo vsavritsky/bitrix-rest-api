@@ -2709,16 +2709,16 @@
         },
         {
             "name": "vsavritsky/bitrix-models",
-            "version": "0.1.24",
+            "version": "0.1.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vsavritsky/bitrix-models.git",
-                "reference": "f7ee99a098d2c29668558b7d5819f6565dd8eb93"
+                "reference": "c3f151da5774421b85436802dfa19eeebe030c75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vsavritsky/bitrix-models/zipball/f7ee99a098d2c29668558b7d5819f6565dd8eb93",
-                "reference": "f7ee99a098d2c29668558b7d5819f6565dd8eb93",
+                "url": "https://api.github.com/repos/vsavritsky/bitrix-models/zipball/c3f151da5774421b85436802dfa19eeebe030c75",
+                "reference": "c3f151da5774421b85436802dfa19eeebe030c75",
                 "shasum": ""
             },
             "require": {
@@ -2737,9 +2737,9 @@
             "description": "Библиотека для работы с инфоблоками, хайлоадами и т.п как сущностями",
             "support": {
                 "issues": "https://github.com/vsavritsky/bitrix-models/issues",
-                "source": "https://github.com/vsavritsky/bitrix-models/tree/0.1.24"
+                "source": "https://github.com/vsavritsky/bitrix-models/tree/0.1.25"
             },
-            "time": "2025-04-25T13:03:51+00:00"
+            "time": "2025-04-25T13:09:25+00:00"
         },
         {
             "name": "vsavritsky/bitrix-rest-api-cache",
