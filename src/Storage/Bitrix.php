@@ -71,9 +71,12 @@ class Bitrix extends Pdo
 
             $stmt = $this->connection->prepare($sql);
             $stmt->bindValue(':phone', $findPhone);
+
+            $stmt = $this->connection->prepare($sql);
+            $stmt->bindValue(':phone', $findPhone);
             $result = $stmt->execute();
 
-            if ($userId = $result->fetch()['ID'] ?? null) {
+            if ($userId = $stmt->fetch()['ID'] ?? null) {
                 $userInfo = UserTable::getList([
                     'filter' => ['=ID' => $userId],
                     'select' => ['ID', 'LOGIN', 'CONFIRM_CODE']
