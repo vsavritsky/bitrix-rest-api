@@ -14,7 +14,7 @@
     "swagger-api/swagger-ui": "^v5.20.1",
     "symfony/dotenv": "^v7.2.0",
     "vsavritsky/bitrix-models": "^0.1.27",
-    "vsavritsky/bitrix-rest-api-smart-filter": "^0.0.32",
+    "vsavritsky/bitrix-rest-api-smart-filter": "^0.0.33",
     "chadicus/slim-oauth2": "^3.4",
     "chadicus/slim-oauth2-http": "^3.2",
     "symfony/string": "^v6.4",
