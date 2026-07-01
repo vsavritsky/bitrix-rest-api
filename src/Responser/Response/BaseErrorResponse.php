@@ -2,7 +2,7 @@
 
 namespace BitrixRestApi\Responser\Response;
 
-use Swagger\Annotations as SWG;
+use OpenApi\Annotations as OA;
 
 class BaseErrorResponse extends AbstractResponse implements \JsonSerializable
 {
@@ -10,19 +10,19 @@ class BaseErrorResponse extends AbstractResponse implements \JsonSerializable
 
     /**
      * @var string
-     * @SWG\Property(type="string", description="Код ошибки")
+     * @OA\Property(type="string", description="Код ошибки")
      */
     public string $errorCode = 'custom';
 
     /**
      * @var string
-     * @SWG\Property(type="string", description="Текст ошибки")
+     * @OA\Property(type="string", description="Текст ошибки")
      */
     public string $message = '';
 
     /**
      * @var string
-     * @SWG\Property(type="string", description="Трейс ошибки")
+     * @OA\Property(type="string", description="Трейс ошибки")
      */
     public string $trace = '';
 

@@ -2,7 +2,7 @@
 
 namespace BitrixRestApi\Responser\Response;
 
-use Swagger\Annotations as SWG;
+use OpenApi\Annotations as OA;
 use Symfony\Component\HttpFoundation\Request;
 
 class AbstractResponse
@@ -12,7 +12,7 @@ class AbstractResponse
 
     /**
      * @var integer
-     * @SWG\Property(type="integer", description="Код ответа")
+     * @OA\Property(type="integer", description="Код ответа")
      */
     public int $code;
 
