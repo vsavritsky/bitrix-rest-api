@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ccf4aebd98b45501aa025d49d395301",
+    "content-hash": "9fc62a29ec5abfaec9830bae7864ba7a",
     "packages": [
         {
             "name": "bshaffer/oauth2-server-php",
@@ -69,286 +69,6 @@
             "time": "2025-03-28T21:13:45+00:00"
         },
         {
-            "name": "chadicus/psr-middleware",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/chadicus/psr-middleware.git",
-                "reference": "21967c00ad43fe5f4a47255de633150fdc83dee5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/chadicus/psr-middleware/zipball/21967c00ad43fe5f4a47255de633150fdc83dee5",
-                "reference": "21967c00ad43fe5f4a47255de633150fdc83dee5",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.6 || ^7.0 || ^8.0",
-                "psr/http-message": "^1.0"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "^3.7"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Chadicus\\Psr\\Middleware\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Foundational interface for PSR-7 middleware",
-            "keywords": [
-                "middleware",
-                "psr"
-            ],
-            "support": {
-                "issues": "https://github.com/chadicus/psr-middleware/issues",
-                "source": "https://github.com/chadicus/psr-middleware/tree/v1.1.0"
-            },
-            "time": "2023-05-09T19:35:15+00:00"
-        },
-        {
-            "name": "chadicus/slim-oauth2",
-            "version": "v3.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/chadicus/slim-oauth2.git",
-                "reference": "2d3d28a2d0a744c6e2904e763a61643e5cd5a3c4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/chadicus/slim-oauth2/zipball/2d3d28a2d0a744c6e2904e763a61643e5cd5a3c4",
-                "reference": "2d3d28a2d0a744c6e2904e763a61643e5cd5a3c4",
-                "shasum": ""
-            },
-            "require": {
-                "chadicus/slim-oauth2-http": "^3.2",
-                "chadicus/slim-oauth2-middleware": "^3.4",
-                "chadicus/slim-oauth2-routes": "^3.2",
-                "php": "^5.6 || ^7.0 || ^8.0"
-            },
-            "type": "metapackage",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "OAuth2 routes, middleware and utilities for use within a Slim Framework API",
-            "keywords": [
-                "api",
-                "http",
-                "middleware",
-                "oauth2",
-                "psr7",
-                "routes",
-                "slim"
-            ],
-            "support": {
-                "issues": "https://github.com/chadicus/slim-oauth2/issues",
-                "source": "https://github.com/chadicus/slim-oauth2/tree/v3.4.0"
-            },
-            "time": "2023-05-09T20:15:27+00:00"
-        },
-        {
-            "name": "chadicus/slim-oauth2-http",
-            "version": "v3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/chadicus/slim-oauth2-http.git",
-                "reference": "50bee83461ece595a42fc199f99df9588be03c16"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/chadicus/slim-oauth2-http/zipball/50bee83461ece595a42fc199f99df9588be03c16",
-                "reference": "50bee83461ece595a42fc199f99df9588be03c16",
-                "shasum": ""
-            },
-            "require": {
-                "bshaffer/oauth2-server-php": "^1.8",
-                "laminas/laminas-diactoros": "^1.8 || ^2.0",
-                "php": "^5.6 || ^7.0 || ^8.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5.7 || ^6.5 || ^9.6 || ^10.1",
-                "squizlabs/php_codesniffer": "^3.7"
-            },
-            "suggest": {
-                "chadicus/slim-oauth2-middleware": "Adds OAuth2 middleware for API requests.",
-                "chadicus/slim-oauth2-routes": "Offers standard OAuth2 routes for slim applications"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Chadicus\\Slim\\OAuth2\\Http\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Bridge components for PSR-7 and bshaffer's OAuth2 Server http messages.",
-            "keywords": [
-                "Bridge",
-                "http",
-                "message",
-                "oauth2",
-                "psr7",
-                "request",
-                "response",
-                "slim"
-            ],
-            "support": {
-                "issues": "https://github.com/chadicus/slim-oauth2-http/issues",
-                "source": "https://github.com/chadicus/slim-oauth2-http/tree/v3.2.0"
-            },
-            "time": "2023-05-09T18:48:45+00:00"
-        },
-        {
-            "name": "chadicus/slim-oauth2-middleware",
-            "version": "v3.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/chadicus/slim-oauth2-middleware.git",
-                "reference": "c135d8979c096de0fbea0f6db6ee437e62cb155d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/chadicus/slim-oauth2-middleware/zipball/c135d8979c096de0fbea0f6db6ee437e62cb155d",
-                "reference": "c135d8979c096de0fbea0f6db6ee437e62cb155d",
-                "shasum": ""
-            },
-            "require": {
-                "bshaffer/oauth2-server-php": "^1.9",
-                "chadicus/psr-middleware": "^1.1",
-                "chadicus/slim-oauth2-http": "^3.2",
-                "container-interop/container-interop": "^1.1",
-                "php": "^5.6 || ^7.0 || ^8.0",
-                "psr/http-message": "^1.0"
-            },
-            "require-dev": {
-                "laminas/laminas-diactoros": "^1.8 || ^2.0",
-                "php-di/php-di": "^5.4",
-                "phpunit/phpunit": "^5.7 || ^6.5 || ^9.6 || ^10.1",
-                "squizlabs/php_codesniffer": "^3.7"
-            },
-            "suggest": {
-                "chadicus/slim-oauth2-routes": "Offers standard OAuth2 routes for slim applications"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Chadicus\\Slim\\OAuth2\\Middleware\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Chad Gray",
-                    "email": "chadwickgray@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "OAuth2 middleware for use within a Slim Framework API",
-            "keywords": [
-                "middleware",
-                "oauth2",
-                "slim"
-            ],
-            "support": {
-                "issues": "https://github.com/chadicus/slim-oauth2-middleware/issues",
-                "source": "https://github.com/chadicus/slim-oauth2-middleware/tree/v3.4.0"
-            },
-            "time": "2023-05-09T19:38:40+00:00"
-        },
-        {
-            "name": "chadicus/slim-oauth2-routes",
-            "version": "v3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/chadicus/slim-oauth2-routes.git",
-                "reference": "41e620e422be072ddf001e33506d3f23fc26ac89"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/chadicus/slim-oauth2-routes/zipball/41e620e422be072ddf001e33506d3f23fc26ac89",
-                "reference": "41e620e422be072ddf001e33506d3f23fc26ac89",
-                "shasum": ""
-            },
-            "require": {
-                "bshaffer/oauth2-server-php": "^1.9",
-                "chadicus/slim-oauth2-http": "^3.2",
-                "php": "^5.6 || ^7.0 || ^8.0"
-            },
-            "require-dev": {
-                "laminas/laminas-diactoros": "^1.8 || ^2.0",
-                "phpunit/phpunit": "^5.7 || ^6.5 || ^9.6 || ^10.1",
-                "slim/php-view": "^2.0.5",
-                "squizlabs/php_codesniffer": "^3.7"
-            },
-            "suggest": {
-                "chadicus/slim-oauth2-middleware": "Adds OAuth2 middleware for API requests.",
-                "slim/php-view": "Simple template rendering"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Chadicus\\Slim\\OAuth2\\Routes\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "OAuth2 routes for use within a Slim Framework API",
-            "keywords": [
-                "oauth2",
-                "routing",
-                "slim"
-            ],
-            "support": {
-                "issues": "https://github.com/chadicus/slim-oauth2-routes/issues",
-                "source": "https://github.com/chadicus/slim-oauth2-routes/tree/v3.2.0"
-            },
-            "time": "2023-05-09T20:04:10+00:00"
-        },
-        {
-            "name": "container-interop/container-interop",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/container-interop/container-interop.git",
-                "reference": "fc08354828f8fd3245f77a66b9e23a6bca48297e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/container-interop/container-interop/zipball/fc08354828f8fd3245f77a66b9e23a6bca48297e",
-                "reference": "fc08354828f8fd3245f77a66b9e23a6bca48297e",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Interop\\Container\\": "src/Interop/Container/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
-            "support": {
-                "issues": "https://github.com/container-interop/container-interop/issues",
-                "source": "https://github.com/container-interop/container-interop/tree/master"
-            },
-            "abandoned": "psr/container",
-            "time": "2014-12-30T15:22:37+00:00"
-        },
-        {
             "name": "fig/http-message-util",
             "version": "1.1.5",
             "source": {
@@ -406,41 +126,41 @@
         },
         {
             "name": "laminas/laminas-diactoros",
-            "version": "2.26.0",
+            "version": "3.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-diactoros.git",
-                "reference": "6584d44eb8e477e89d453313b858daac6183cddc"
+                "reference": "60c182916b2749480895601649563970f3f12ec4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-diactoros/zipball/6584d44eb8e477e89d453313b858daac6183cddc",
-                "reference": "6584d44eb8e477e89d453313b858daac6183cddc",
+                "url": "https://api.github.com/repos/laminas/laminas-diactoros/zipball/60c182916b2749480895601649563970f3f12ec4",
+                "reference": "60c182916b2749480895601649563970f3f12ec4",
                 "shasum": ""
             },
             "require": {
-                "php": "~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0",
-                "psr/http-factory": "^1.0",
-                "psr/http-message": "^1.1"
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
+                "psr/http-factory": "^1.1",
+                "psr/http-message": "^1.1 || ^2.0"
             },
             "conflict": {
-                "zendframework/zend-diactoros": "*"
+                "amphp/amp": "<2.6.4"
             },
             "provide": {
-                "psr/http-factory-implementation": "1.0",
-                "psr/http-message-implementation": "1.0"
+                "psr/http-factory-implementation": "^1.0",
+                "psr/http-message-implementation": "^1.1 || ^2.0"
             },
             "require-dev": {
                 "ext-curl": "*",
                 "ext-dom": "*",
                 "ext-gd": "*",
                 "ext-libxml": "*",
-                "http-interop/http-factory-tests": "^0.9.0",
-                "laminas/laminas-coding-standard": "^2.5",
-                "php-http/psr7-integration-tests": "^1.2",
-                "phpunit/phpunit": "^9.5.28",
-                "psalm/plugin-phpunit": "^0.18.4",
-                "vimeo/psalm": "^5.6"
+                "http-interop/http-factory-tests": "^2.2.0",
+                "laminas/laminas-coding-standard": "~3.1.0",
+                "php-http/psr7-integration-tests": "^1.4.0",
+                "phpunit/phpunit": "^10.5.36",
+                "psalm/plugin-phpunit": "^0.19.5",
+                "vimeo/psalm": "^6.13"
             },
             "type": "library",
             "extra": {
@@ -455,18 +175,9 @@
                     "src/functions/marshal_headers_from_sapi.php",
                     "src/functions/marshal_method_from_sapi.php",
                     "src/functions/marshal_protocol_version_from_sapi.php",
-                    "src/functions/marshal_uri_from_sapi.php",
                     "src/functions/normalize_server.php",
                     "src/functions/normalize_uploaded_files.php",
-                    "src/functions/parse_cookie_header.php",
-                    "src/functions/create_uploaded_file.legacy.php",
-                    "src/functions/marshal_headers_from_sapi.legacy.php",
-                    "src/functions/marshal_method_from_sapi.legacy.php",
-                    "src/functions/marshal_protocol_version_from_sapi.legacy.php",
-                    "src/functions/marshal_uri_from_sapi.legacy.php",
-                    "src/functions/normalize_server.legacy.php",
-                    "src/functions/normalize_uploaded_files.legacy.php",
-                    "src/functions/parse_cookie_header.legacy.php"
+                    "src/functions/parse_cookie_header.php"
                 ],
                 "psr-4": {
                     "Laminas\\Diactoros\\": "src/"
@@ -499,20 +210,20 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2023-10-29T16:17:44+00:00"
+            "time": "2025-10-12T15:31:36+00:00"
         },
         {
             "name": "laravel/serializable-closure",
-            "version": "v2.0.13",
+            "version": "v2.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/serializable-closure.git",
-                "reference": "b566ee0dd251f3c4078bed003a7ce015f5ea6dce"
+                "reference": "7cfc24e4fa2cca045fb8dd2a797a2b2b13b655ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/b566ee0dd251f3c4078bed003a7ce015f5ea6dce",
-                "reference": "b566ee0dd251f3c4078bed003a7ce015f5ea6dce",
+                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/7cfc24e4fa2cca045fb8dd2a797a2b2b13b655ed",
+                "reference": "7cfc24e4fa2cca045fb8dd2a797a2b2b13b655ed",
                 "shasum": ""
             },
             "require": {
@@ -560,20 +271,20 @@
                 "issues": "https://github.com/laravel/serializable-closure/issues",
                 "source": "https://github.com/laravel/serializable-closure"
             },
-            "time": "2026-04-16T14:03:50+00:00"
+            "time": "2026-08-18T20:28:54+00:00"
         },
         {
             "name": "nikic/fast-route",
-            "version": "v1.3.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/FastRoute.git",
-                "reference": "181d480e08d9476e61381e04a71b34dc0432e812"
+                "reference": "7476684f39bb9124b3be69ed3d84b66723920298"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/FastRoute/zipball/181d480e08d9476e61381e04a71b34dc0432e812",
-                "reference": "181d480e08d9476e61381e04a71b34dc0432e812",
+                "url": "https://api.github.com/repos/nikic/FastRoute/zipball/7476684f39bb9124b3be69ed3d84b66723920298",
+                "reference": "7476684f39bb9124b3be69ed3d84b66723920298",
                 "shasum": ""
             },
             "require": {
@@ -608,26 +319,25 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/FastRoute/issues",
-                "source": "https://github.com/nikic/FastRoute/tree/master"
+                "source": "https://github.com/nikic/FastRoute/tree/1.3.1"
             },
-            "time": "2018-02-13T20:26:39+00:00"
+            "time": "2026-07-09T19:38:47+00:00"
         },
         {
             "name": "nikic/php-parser",
-            "version": "v5.7.0",
+            "version": "v5.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "dca41cd15c2ac9d055ad70dbfd011130757d1f82"
+                "reference": "044a6a392ff8ad0d61f14370a5fbbd0a0107152f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/dca41cd15c2ac9d055ad70dbfd011130757d1f82",
-                "reference": "dca41cd15c2ac9d055ad70dbfd011130757d1f82",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/044a6a392ff8ad0d61f14370a5fbbd0a0107152f",
+                "reference": "044a6a392ff8ad0d61f14370a5fbbd0a0107152f",
                 "shasum": ""
             },
             "require": {
-                "ext-ctype": "*",
                 "ext-json": "*",
                 "ext-tokenizer": "*",
                 "php": ">=7.4"
@@ -666,9 +376,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.7.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.8.0"
             },
-            "time": "2025-12-06T11:56:16+00:00"
+            "time": "2026-07-04T14:30:18+00:00"
         },
         {
             "name": "php-di/invoker",
@@ -800,16 +510,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "2.3.2",
+            "version": "2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "a004701b11273a26cd7955a61d67a7f1e525a45a"
+                "reference": "fb19eedd2bb67ff8cf7a5502ad329e701d6398a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/a004701b11273a26cd7955a61d67a7f1e525a45a",
-                "reference": "a004701b11273a26cd7955a61d67a7f1e525a45a",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/fb19eedd2bb67ff8cf7a5502ad329e701d6398a3",
+                "reference": "fb19eedd2bb67ff8cf7a5502ad329e701d6398a3",
                 "shasum": ""
             },
             "require": {
@@ -841,9 +551,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.3.2"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.3.3"
             },
-            "time": "2026-01-25T14:56:51+00:00"
+            "time": "2026-07-08T07:01:06+00:00"
         },
         {
             "name": "predis/predis",
@@ -1541,16 +1251,16 @@
         },
         {
             "name": "swagger-api/swagger-ui",
-            "version": "v5.32.8",
+            "version": "v5.32.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swagger-api/swagger-ui.git",
-                "reference": "4e0d3f88de7db0395a80ef0541ff428f0926d484"
+                "reference": "6e8ce248db64190e4113676aba996943c56f2491"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/4e0d3f88de7db0395a80ef0541ff428f0926d484",
-                "reference": "4e0d3f88de7db0395a80ef0541ff428f0926d484",
+                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/6e8ce248db64190e4113676aba996943c56f2491",
+                "reference": "6e8ce248db64190e4113676aba996943c56f2491",
                 "shasum": ""
             },
             "type": "library",
@@ -1596,22 +1306,22 @@
             ],
             "support": {
                 "issues": "https://github.com/swagger-api/swagger-ui/issues",
-                "source": "https://github.com/swagger-api/swagger-ui/tree/v5.32.8"
+                "source": "https://github.com/swagger-api/swagger-ui/tree/v5.32.14"
             },
-            "time": "2026-06-23T08:15:35+00:00"
+            "time": "2026-08-18T12:12:25+00:00"
         },
         {
             "name": "symfony/console",
-            "version": "v6.4.42",
+            "version": "v6.4.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "9ef84af84a7b66396da483634227650506428639"
+                "reference": "60e3944c4859c487aa6ea2f0f7754917f70f7524"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/9ef84af84a7b66396da483634227650506428639",
-                "reference": "9ef84af84a7b66396da483634227650506428639",
+                "url": "https://api.github.com/repos/symfony/console/zipball/60e3944c4859c487aa6ea2f0f7754917f70f7524",
+                "reference": "60e3944c4859c487aa6ea2f0f7754917f70f7524",
                 "shasum": ""
             },
             "require": {
@@ -1676,7 +1386,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v6.4.42"
+                "source": "https://github.com/symfony/console/tree/v6.4.44"
             },
             "funding": [
                 {
@@ -1696,7 +1406,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-15T05:35:29+00:00"
+            "time": "2026-08-21T07:42:12+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -1771,16 +1481,16 @@
         },
         {
             "name": "symfony/dotenv",
-            "version": "v7.4.14",
+            "version": "v7.4.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dotenv.git",
-                "reference": "9b9c7a00e565238857eea0040dc9745e3576402e"
+                "reference": "99b5b14953237c89ed24f1af5ba34225caf598a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dotenv/zipball/9b9c7a00e565238857eea0040dc9745e3576402e",
-                "reference": "9b9c7a00e565238857eea0040dc9745e3576402e",
+                "url": "https://api.github.com/repos/symfony/dotenv/zipball/99b5b14953237c89ed24f1af5ba34225caf598a4",
+                "reference": "99b5b14953237c89ed24f1af5ba34225caf598a4",
                 "shasum": ""
             },
             "require": {
@@ -1825,7 +1535,7 @@
                 "environment"
             ],
             "support": {
-                "source": "https://github.com/symfony/dotenv/tree/v7.4.14"
+                "source": "https://github.com/symfony/dotenv/tree/v7.4.15"
             },
             "funding": [
                 {
@@ -1845,20 +1555,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-05T06:22:21+00:00"
+            "time": "2026-07-26T10:22:28+00:00"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v6.4.39",
+            "version": "v6.4.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "c507b077756b4e3e09adbbe7975fac81cd3722ca"
+                "reference": "e84ffb3e77e3a7144727a0d0735d0d9cc0ca77a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/c507b077756b4e3e09adbbe7975fac81cd3722ca",
-                "reference": "c507b077756b4e3e09adbbe7975fac81cd3722ca",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/e84ffb3e77e3a7144727a0d0735d0d9cc0ca77a7",
+                "reference": "e84ffb3e77e3a7144727a0d0735d0d9cc0ca77a7",
                 "shasum": ""
             },
             "require": {
@@ -1895,7 +1605,7 @@
             "description": "Provides basic utilities for the filesystem",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/filesystem/tree/v6.4.39"
+                "source": "https://github.com/symfony/filesystem/tree/v6.4.44"
             },
             "funding": [
                 {
@@ -1915,20 +1625,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-07T13:11:42+00:00"
+            "time": "2026-08-20T20:21:47+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v7.4.14",
+            "version": "v7.4.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "13b38720174286f55d1761152b575a8d1436fc25"
+                "reference": "5ce28827081f6d1f0c32eaf3882750f19cb5bbe6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/13b38720174286f55d1761152b575a8d1436fc25",
-                "reference": "13b38720174286f55d1761152b575a8d1436fc25",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/5ce28827081f6d1f0c32eaf3882750f19cb5bbe6",
+                "reference": "5ce28827081f6d1f0c32eaf3882750f19cb5bbe6",
                 "shasum": ""
             },
             "require": {
@@ -1963,7 +1673,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v7.4.14"
+                "source": "https://github.com/symfony/finder/tree/v7.4.17"
             },
             "funding": [
                 {
@@ -1983,20 +1693,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-27T08:31:18+00:00"
+            "time": "2026-08-21T12:09:28+00:00"
         },
         {
             "name": "symfony/lock",
-            "version": "v7.4.14",
+            "version": "v7.4.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/lock.git",
-                "reference": "749d1f3bcc158c60a15e9c5d45d60bac293fa0f2"
+                "reference": "f5c1e1a50075448a6d13565a3e1068ea51496cbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/lock/zipball/749d1f3bcc158c60a15e9c5d45d60bac293fa0f2",
-                "reference": "749d1f3bcc158c60a15e9c5d45d60bac293fa0f2",
+                "url": "https://api.github.com/repos/symfony/lock/zipball/f5c1e1a50075448a6d13565a3e1068ea51496cbb",
+                "reference": "f5c1e1a50075448a6d13565a3e1068ea51496cbb",
                 "shasum": ""
             },
             "require": {
@@ -2046,7 +1756,7 @@
                 "semaphore"
             ],
             "support": {
-                "source": "https://github.com/symfony/lock/tree/v7.4.14"
+                "source": "https://github.com/symfony/lock/tree/v7.4.17"
             },
             "funding": [
                 {
@@ -2066,7 +1776,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-11T07:31:44+00:00"
+            "time": "2026-08-14T13:18:30+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2153,16 +1863,16 @@
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
-            "version": "v1.38.1",
+            "version": "v1.41.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
-                "reference": "e9247d281d694a5120554d9afaf54e070e88a603"
+                "reference": "bb899c1db0aa8127dc3afe8cda4a67eb24915f8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/e9247d281d694a5120554d9afaf54e070e88a603",
-                "reference": "e9247d281d694a5120554d9afaf54e070e88a603",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/bb899c1db0aa8127dc3afe8cda4a67eb24915f8d",
+                "reference": "bb899c1db0aa8127dc3afe8cda4a67eb24915f8d",
                 "shasum": ""
             },
             "require": {
@@ -2211,7 +1921,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.38.1"
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.41.0"
             },
             "funding": [
                 {
@@ -2231,20 +1941,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-26T05:58:03+00:00"
+            "time": "2026-07-28T08:25:59+00:00"
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.38.0",
+            "version": "v1.42.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
-                "reference": "2d446c214bdbe5b71bde5011b060a05fece3ae6b"
+                "reference": "aa20edea75bd9c48cfecc8360922e5a6e5c44502"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/2d446c214bdbe5b71bde5011b060a05fece3ae6b",
-                "reference": "2d446c214bdbe5b71bde5011b060a05fece3ae6b",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/aa20edea75bd9c48cfecc8360922e5a6e5c44502",
+                "reference": "aa20edea75bd9c48cfecc8360922e5a6e5c44502",
                 "shasum": ""
             },
             "require": {
@@ -2296,7 +2006,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.38.0"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.42.0"
             },
             "funding": [
                 {
@@ -2316,7 +2026,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-25T13:48:31+00:00"
+            "time": "2026-08-07T06:33:24+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2576,16 +2286,16 @@
         },
         {
             "name": "symfony/string",
-            "version": "v7.4.13",
+            "version": "v7.4.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "961683010db3b27ec6ebcd7308e6e1ee8fa7ffde"
+                "reference": "e394af32256bf9e7bf80849d95e589167c10097b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/961683010db3b27ec6ebcd7308e6e1ee8fa7ffde",
-                "reference": "961683010db3b27ec6ebcd7308e6e1ee8fa7ffde",
+                "url": "https://api.github.com/repos/symfony/string/zipball/e394af32256bf9e7bf80849d95e589167c10097b",
+                "reference": "e394af32256bf9e7bf80849d95e589167c10097b",
                 "shasum": ""
             },
             "require": {
@@ -2643,7 +2353,7 @@
                 "utf8"
             ],
             "support": {
-                "source": "https://github.com/symfony/string/tree/v7.4.13"
+                "source": "https://github.com/symfony/string/tree/v7.4.15"
             },
             "funding": [
                 {
@@ -2663,20 +2373,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-23T15:23:29+00:00"
+            "time": "2026-07-28T07:33:02+00:00"
         },
         {
             "name": "symfony/type-info",
-            "version": "v7.4.9",
+            "version": "v7.4.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/type-info.git",
-                "reference": "cafeedbf157b890e94ac5b83eaed85595106d5d6"
+                "reference": "62d0ad6995630a4f7ea8fd270aadb3e2545c8e31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/type-info/zipball/cafeedbf157b890e94ac5b83eaed85595106d5d6",
-                "reference": "cafeedbf157b890e94ac5b83eaed85595106d5d6",
+                "url": "https://api.github.com/repos/symfony/type-info/zipball/62d0ad6995630a4f7ea8fd270aadb3e2545c8e31",
+                "reference": "62d0ad6995630a4f7ea8fd270aadb3e2545c8e31",
                 "shasum": ""
             },
             "require": {
@@ -2726,7 +2436,7 @@
                 "type"
             ],
             "support": {
-                "source": "https://github.com/symfony/type-info/tree/v7.4.9"
+                "source": "https://github.com/symfony/type-info/tree/v7.4.17"
             },
             "funding": [
                 {
@@ -2746,20 +2456,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-04-22T15:21:55+00:00"
+            "time": "2026-08-21T15:52:48+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v7.4.14",
+            "version": "v7.4.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "f8f328665ace2370d1e10645b807ba1646dc7dcc"
+                "reference": "0b040d7b66ceb10b7bb24c8e6656257932693a12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/f8f328665ace2370d1e10645b807ba1646dc7dcc",
-                "reference": "f8f328665ace2370d1e10645b807ba1646dc7dcc",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/0b040d7b66ceb10b7bb24c8e6656257932693a12",
+                "reference": "0b040d7b66ceb10b7bb24c8e6656257932693a12",
                 "shasum": ""
             },
             "require": {
@@ -2802,7 +2512,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v7.4.14"
+                "source": "https://github.com/symfony/yaml/tree/v7.4.17"
             },
             "funding": [
                 {
@@ -2822,7 +2532,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-08T20:24:16+00:00"
+            "time": "2026-08-21T12:09:28+00:00"
         },
         {
             "name": "thisi69/console-jedi",
@@ -3002,26 +2712,26 @@
         },
         {
             "name": "vsavritsky/slim-oauth2-http",
-            "version": "v4.0.0",
+            "version": "v4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vsavritsky/slim-oauth2-http.git",
-                "reference": "615e61acf4112da00ec62325a23c4629a967de73"
+                "reference": "44ed0f4711db87f3e3d15aad69922d62d47ba8e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vsavritsky/slim-oauth2-http/zipball/615e61acf4112da00ec62325a23c4629a967de73",
-                "reference": "615e61acf4112da00ec62325a23c4629a967de73",
+                "url": "https://api.github.com/repos/vsavritsky/slim-oauth2-http/zipball/44ed0f4711db87f3e3d15aad69922d62d47ba8e5",
+                "reference": "44ed0f4711db87f3e3d15aad69922d62d47ba8e5",
                 "shasum": ""
             },
             "require": {
                 "bshaffer/oauth2-server-php": "^1.8",
-                "laminas/laminas-diactoros": "^2.8",
-                "php": "^7.4 || ^8.0"
+                "laminas/laminas-diactoros": "^3.8",
+                "php": ">=8.2"
             },
             "require-dev": {
                 "php-coveralls/php-coveralls": "^2.5",
-                "phpunit/phpunit": "^8.5",
+                "phpunit/phpunit": "^9.6",
                 "squizlabs/php_codesniffer": "^3.2"
             },
             "suggest": {
@@ -3057,9 +2767,9 @@
                 "slim"
             ],
             "support": {
-                "source": "https://github.com/vsavritsky/slim-oauth2-http/tree/v4.0.0"
+                "source": "https://github.com/vsavritsky/slim-oauth2-http/tree/v4.1.0"
             },
-            "time": "2023-01-20T21:13:39+00:00"
+            "time": "2026-08-27T12:31:32+00:00"
         },
         {
             "name": "vsavritsky/slim-oauth2-middleware",
@@ -3214,15 +2924,15 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=8.2"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "platform-overrides": {
-        "php": "8.3.99"
+        "php": "8.2.99"
     },
     "plugin-api-version": "2.6.0"
 }
