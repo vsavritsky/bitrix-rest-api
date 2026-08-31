@@ -24,8 +24,8 @@ return function (App $app) {
 
     #$app->get('/api/app/personal/profile/item', [\App\Controller\PersonalController::class, "profileItem"])->addMiddleware($authMiddleware);
     #$app->post('/api/app/personal/profile/edit', [\App\Controller\PersonalController::class, "profileEdit"])->addMiddleware($authMiddleware);
-    
-    $app->get('/api/app/settings/view', [\App\Controller\SettingsController::class, "view"])->add($cacheMiddleware);
+
+    $app->get('/api/app/settings/view', [\App\Controller\SettingsController::class, "view"])->add($cacheMiddleware->withCacheTime(15 * 60)); // кэш 15 минут
 
     $app->get('/api/app/content/news/list', [\App\Controller\NewsController::class, "list"])->add($cacheMiddleware);
     $app->get('/api/app/content/news/{id}/view', [\App\Controller\NewsController::class, "view"])->add($cacheMiddleware);
